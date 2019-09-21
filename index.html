@@ -9,146 +9,323 @@
     <title>My cinema</title>
     <link rel="icon" type="image/png" href="images/favicon2.png" />
     <link rel="stylesheet" type="text/css" href="build/style.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <!--<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">-->
 </head>
 
 <body>
-    <nav>
-        <div style="background-color: black">
-            <a href="http://university.innopolis.ru" target="_blank"><img title="Университет Иннополис" alt="Лого Иннополиса" src="images/logo.png"/></a>
-            <a title="Заказать билет" href="#" style="color: white">ЗАКАЗАТЬ БИЛЕТ</a>
-            <a title="Наши преимущества" href="#" style="color: white">ПРЕИМУЩЕСТВА</a>
-            <a title="Фильмы" href="#" style="color: white">ФИЛЬМЫ</a>
-            <a title="Контакты" href="#" style="color: white">КОНТАКТЫ</a>
-            <span style="color: white">ВАШ ГОРОД:</span>
-            <a title="Выбор города" href="#" style="color: white">Москва</a>
-        </div>
-    </nav>
 
+    <!-- меню -->
+    <header>
+        <nav class="menu">
+            <ul class="ul_nav">
+                <li id="logo">
+                    <a href="http://university.innopolis.ru" target="_blank"><img title="Университет Иннополис" alt="Лого Иннополиса" src="images/logo.png" /></a>
+                </li>
+                <li id="menu__event-details">
+                    <a title="Заказать билет" href="#">Event details</a>
+                </li>
+                <li id="menu__speakers">
+                    <a title="Наши преимущества" href="#choose-the-film">Speakers</a>
+                </li>
+                <li id="menu__sponsors">
+                    <a title="Фильмы" href="#">Sponsors</a>
+                </li>
+                <li id="menu__past-events">
+                    <a title="Контакты" href="#">Past events</a>
+                </li>
+                <li id="menu__contacts">
+                    <a title="Контакты" href="#">Contact</a>
+                </li>
+<!--
+                <li class="menu_nav_li_city">
+                    <span style="color: white">ВАШ ГОРОД:</span>
+                    <a title="Выбор города" href="#" style="color: white">Москва</a>
+                </li>
+-->
+            </ul>
+        </nav>
+    </header>
 
-    <div>
+<!-- h1 Закажите билет в кино -->
+    <div class="main-title">
         <h1>Закажите билет в кино</h1>
         <b>Всем покупателям подарок!</b>
     </div>
 
-    <div>
-        <h3>Добро пожаловать!</h3>
-        <p>Cumque dolorem eum harum laudantium libero molestias saepe soluta? Facere minima optio perferendis quibusdam quis reprehenderit, saepe! Debitis enim optio saepe voluptatibus.</p>
-        <p>Cumque dolorem eum harum laudantium libero molestias saepe soluta? Facere minima optio perferendis quibusdam quis reprehenderit, saepe! Debitis enim optio saepe voluptatibus.</p>
+<!-- добро пожаловать -->
+    <div class="welcome">
+        <h2>Добро пожаловать!</h2>
+        <p>Cumque dolorem eum harum laudantium libero molestias saepe soluta? Facere minima optio perferendis quibusdam
+            quis reprehenderit, saepe! Debitis enim optio saepe voluptatibus.</p>
+        <p>Cumque dolorem eum harum laudantium libero molestias saepe soluta? Facere minima optio perferendis quibusdam
+            quis reprehenderit, saepe! Debitis enim optio saepe voluptatibus.</p>
     </div>
 
+<!-- Почему мы? Пока стили частично прописал тут, всё равно переделывать-->
     <section>
-        <h2>Почему мы?</h2>
-        <table>
-            <tr>
-                <td style="width: 33%" align="center" valign="top">
-                    <img title="Большие экраны" alt="Большие экраны" src="images/b2_icon_1.jpg"/>
-                </td>
-                <td style="width: 33%" align="center" valign="top">
-                    <img title="Объемный звук" alt="Объемный звук" src="images/b2_icon_2.jpg"/>
+        <div class="why-we">
+            <h2>Почему мы?</h2>
+            <table>
+                <tr>
+                    <td style="width: 33%" align="center" valign="top">
+                        <img title="Большие экраны" alt="Большие экраны" src="images/b2_icon_1.jpg" />
+                    </td>
+                    <td style="width: 33%" align="center" valign="top">
+                        <img title="Объемный звук" alt="Объемный звук" src="images/b2_icon_2.jpg" />
 
-                </td>
-                <td style="width: 34%" align="center" valign="top">
-                    <img title="Удобные кресла" alt="Удобные кресла" src="images/b2_icon_3.jpg"/>
-                </td>
-            </tr>
-            <tr>
-                <td align="center" valign="top">
-                    <h4>Большие экраны</h4>
-                    <p>Lorem ipsoodle dolor sit amet, consectetur adipisicing elit. At autem cum dolores dolorum eius error expedita illum itaque molestiae mollitia nemo, nostrum officia quas ratione tempora temporibus veritatis vero voluptates.</p>    
-                </td>
-                <td align="center" valign="top">
-                    <h4>Объемный звук</h4>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </td>
-                <td align="center" valign="top">
-                    <h4>Удобные кресла</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At autem cum dolores dolorum eius error expedita illum itaque molestiae mollitia nemo, nostrum officia quas ratione tempora temporibus veritatis vero voluptates.</p>
-                </td>
-            </tr>
-        </table>
+                    </td>
+                    <td style="width: 34%" align="center" valign="top">
+                        <img title="Удобные кресла" alt="Удобные кресла" src="images/b2_icon_3.jpg" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" valign="top">
+                        <h3>Большие экраны</h3>
+                        <p>Lorem ipsoodle dolor sit amet, consectetur adipisicing elit. At autem cum dolores dolorum eius
+                            error expedita illum itaque molestiae mollitia nemo, nostrum officia quas ratione tempora
+                            temporibus veritatis vero voluptates.</p>
+                    </td>
+                    <td align="center" valign="top">
+                        <h3>Объемный звук</h3>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </td>
+                    <td align="center" valign="top">
+                        <h3>Удобные кресла</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At autem cum dolores dolorum eius error
+                            expedita illum itaque molestiae mollitia nemo, nostrum officia quas ratione tempora temporibus
+                            veritatis vero voluptates.</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </section>
 
-    <br/><br/>
 
+
+<!-- Таблица Выберите фильм. Релиз 2.4 -->
     <section>
-        <h2>Выберите фильм</h2>
-        <table style="border: 1px solid grey; width: 100%; border-collapse: collapse">
-            <tr>
-                <th style="border: 1px solid grey" align="center"></th>
-                <th style="border: 1px solid grey" align="center">Начало сеанса</th>
-                <th style="border: 1px solid grey" align="center">Название фильма</th>
-                <th style="border: 1px solid grey" align="left">Жанр</th>
-            </tr>
-            <tr>
-                <td style="border: 1px solid grey"></td>
-                <td style="border: 1px solid grey" align="center">10:00</td>
-                <td style="border: 1px solid grey"><a title="Кинопоиск" href="https://www.kinopoisk.ru/film/1008445/" target="_blank">Человек-паук</a></td>
-                <td style="border: 1px solid grey">фантастика, боевик, приключения</td>
-            </tr>
-            <tr>
-                <td style="border: 1px solid grey"></td>
-                <td style="border: 1px solid grey" align="center">12:00</td>
-                <td style="border: 1px solid grey"><a title="Кинопоиск" href="https://www.kinopoisk.ru/film/sobachya-zhizn-2-2019-1122114/" target="_blank">Собачья жизнь 2</a></td>
-                <td style="border: 1px solid grey">фэнтези, драма, комедия</td>
-            </tr>
-            <tr>
-                <td style="border: 1px solid grey"></td>
-                <td style="border: 1px solid grey" align="center">14:00</td>
-                <td style="border: 1px solid grey"><a title="Кинопоиск" href="https://www.kinopoisk.ru/film/istoriya-igrushek-4-2019-846824/" target="_blank">История игрушек 4</a></td>
-                <td style="border: 1px solid grey">мультфильм, фэнтези, комедия</td>
-            </tr>
-            <tr>
-                <td style="border: 1px solid grey"></td>
-                <td style="border: 1px solid grey" align="center">16:00</td>
-                <td style="border: 1px solid grey"><a title="Кинопоиск" href="https://www.kinopoisk.ru/film/lyudi-v-chernom-interneshnl-2019-693730/" target="_blank">Люди в черном: Интернэшнл</a></td>
-                <td style="border: 1px solid grey">фантастика, боевик, комедия</td>
-            </tr>
-        </table>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid eum facere obcaecati quam rem repellendus veritatis. Aliquam beatae, delectus dignissimos enim exercitationem mollitia nisi pariatur quaerat quam, qui quibusdam sunt!</p>
+        <div class="movie-list">
+            <h2 id="choose-the-film" class="movie-list__header-h2">Выберите фильм</h2>
+            <div class="container">
+                <table class="movie-list__table">
+                    <thead>
+                        <tr class="movie-list__table-h">
+                            <th class="movie-list__table-time-h"><a href="#begin"><div>Начало <br /> сеанса</div><div class="triangle-div-time"><span class="triangle-up"></span></div></a></th>
+                            <th class="movie-list__table-film-h"><a href="#name"><div>Название фильма</div><div class="triangle-div-name"><span class="triangle-down"></span></div></a></th>
+                            <th class="movie-list__table-genre-h"><a href="#genre">Жанр</a></th>
+                            <th class="movie-list__table-plus"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="movie-list__table-dark">
+                            <td class="movie-list__table-time-b">10:00</td>
+                            <td class="movie-list__table-film-b"><a title="Кинопоиск" href="https://www.kinopoisk.ru/film/1008445/"
+                                target="_blank">Человек-паук</a></td>
+                            <td class="movie-list__table-genre-b">фантастика, боевик, приключения</td>
+                            <td class="movie-list__table-plus">
+                                <svg 
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="33px" height="33px">
+                               <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+                                d="M16.505,32.994 C7.393,32.994 0.005,25.607 0.005,16.494 C0.005,7.381 7.393,-0.006 16.505,-0.006 C25.618,-0.006 33.005,7.381 33.005,16.494 C33.005,25.607 25.618,32.994 16.505,32.994 ZM24.214,14.591 L18.356,14.631 L18.356,8.796 L13.958,8.777 L13.958,14.637 L8.083,14.637 L8.083,19.074 L13.958,19.074 L13.958,24.889 L18.336,24.889 L18.307,19.074 L24.231,19.074 L24.214,14.591 Z"/>
+                               </svg>
+                            </td>
+                        </tr>
+                        <tr class="movie-list__table-light">
+                            <td class="movie-list__table-time-b">12:00</td>
+                            <td class="movie-list__table-film-b"><a title="Кинопоиск"
+                                href="https://www.kinopoisk.ru/film/sobachya-zhizn-2-2019-1122114/" target="_blank">Собачья жизнь 2</a></td>
+                            <td class="movie-list__table-genre-b">фэнтези, драма, комедия</td>
+                            <td class="movie-list__table-plus">
+                                <svg 
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="33px" height="33px">
+                               <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+                                d="M16.505,32.994 C7.393,32.994 0.005,25.607 0.005,16.494 C0.005,7.381 7.393,-0.006 16.505,-0.006 C25.618,-0.006 33.005,7.381 33.005,16.494 C33.005,25.607 25.618,32.994 16.505,32.994 ZM24.214,14.591 L18.356,14.631 L18.356,8.796 L13.958,8.777 L13.958,14.637 L8.083,14.637 L8.083,19.074 L13.958,19.074 L13.958,24.889 L18.336,24.889 L18.307,19.074 L24.231,19.074 L24.214,14.591 Z"/>
+                               </svg>
+                            </td>
+                        </tr>
+                        <tr class="movie-list__table-dark">
+                            <td class="movie-list__table-time-b">14:00</td>
+                            <td class="movie-list__table-film-b"><a title="Кинопоиск"
+                                href="https://www.kinopoisk.ru/film/istoriya-igrushek-4-2019-846824/" target="_blank">История игрушек 4</a></td>
+                            <td class="movie-list__table-genre-b">мультфильм, фэнтези, комедия</td>
+                            <td class="movie-list__table-plus">
+                                <svg 
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="33px" height="33px">
+                               <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+                                d="M16.505,32.994 C7.393,32.994 0.005,25.607 0.005,16.494 C0.005,7.381 7.393,-0.006 16.505,-0.006 C25.618,-0.006 33.005,7.381 33.005,16.494 C33.005,25.607 25.618,32.994 16.505,32.994 ZM24.214,14.591 L18.356,14.631 L18.356,8.796 L13.958,8.777 L13.958,14.637 L8.083,14.637 L8.083,19.074 L13.958,19.074 L13.958,24.889 L18.336,24.889 L18.307,19.074 L24.231,19.074 L24.214,14.591 Z"/>
+                               </svg>
+                            </td>
+                        </tr>
+                        <tr class="movie-list__table-light">
+                            <td class="movie-list__table-time-b">16:00</td>
+                            <td class="movie-list__table-film-b"><a title="Кинопоиск"
+                                href="https://www.kinopoisk.ru/film/lyudi-v-chernom-interneshnl-2019-693730/"
+                                target="_blank">Люди в черном: Интернэшнл</a></td>
+                            <td class="movie-list__table-genre-b">фантастика, боевик, комедия</td>
+                            <td class="movie-list__table-plus">
+                                <svg 
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="33px" height="33px">
+                               <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+                                d="M16.505,32.994 C7.393,32.994 0.005,25.607 0.005,16.494 C0.005,7.381 7.393,-0.006 16.505,-0.006 C25.618,-0.006 33.005,7.381 33.005,16.494 C33.005,25.607 25.618,32.994 16.505,32.994 ZM24.214,14.591 L18.356,14.631 L18.356,8.796 L13.958,8.777 L13.958,14.637 L8.083,14.637 L8.083,19.074 L13.958,19.074 L13.958,24.889 L18.336,24.889 L18.307,19.074 L24.231,19.074 L24.214,14.591 Z"/>
+                               </svg>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="movie-list__footer">
+                    Please keep in mind that the timings may differ according to the flow of the event.
+                    The even is actually day long and we do plan to finish <br/>
+                    it within our set time but it doesn’t have to be, if we all agree to hangour 
+                    for some time more, what harm could it do? :)
+                </p>
+            </div>
+        </div>
     </section>
 
-    <br/><br/>
+    <br /><br />
 
-    <section>
+<!-- Подарок каждому -->
+    <section class="gift">
         <h2>Подарок каждому!</h2>
-        <img src="images/b4_img.jpg"/>
+        <img alt="Подарок каждому" src="images/b4_img.jpg" />
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam aspernatur, cum, cupiditate excepturi expedita libero mollitia 
-            nesciunt nihil nobis obcaecati quasi ratione reprehenderit sequi sint, tenetur unde velit veniam! Lorem ipsum dolor sit amet, 
-            consectetur adipisicing elit. Ab aperiam aspernatur, cum, cupiditate excepturi expedita libero mollitia nesciunt nihil nobis
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam aspernatur, cum, cupiditate excepturi
+            expedita libero mollitia
+            nesciunt nihil nobis obcaecati quasi ratione reprehenderit sequi sint, tenetur unde velit veniam! Lorem
+            ipsum dolor sit amet,
+            consectetur adipisicing elit. Ab aperiam aspernatur, cum, cupiditate excepturi expedita libero mollitia
+            nesciunt nihil nobis
             obcaecati quasi ratione reprehenderit sequi sint, tenetur unde velit veniam!
         </p>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam aspernatur, cum, cupiditate excepturi expedita libero mollitia 
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam aspernatur, cum, cupiditate excepturi
+            expedita libero mollitia
             nesciunt nihil nobis obcaecati quasi ratione reprehenderit sequi sint, tenetur unde velit veniam!
         </p>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam aspernatur, cum, cupiditate excepturi expedita libero mollitia 
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam aspernatur, cum, cupiditate excepturi
+            expedita libero mollitia
             nesciunt nihil nobis obcaecati quasi ratione reprehenderit sequi sint, tenetur unde velit veniam!
         </p>
         <div>Кнопка Получить подарок</div>
     </section>
 
-    <br/><br/>
+    <br /><br />
 
+<!-- Карточки фильмов -->
     <section>
         <h2>Фильмы</h2>
-        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci alias, animi, commodi eius ipsum, laudantium neque nihil omnis perferendis sed sequi tempore! Ad ea esse ex inventore repudiandae, suscipit!</div>
-        <br/>
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci alias, animi, commodi eius ipsum,
+            laudantium neque nihil omnis perferendis sed sequi tempore! Ad ea esse ex inventore repudiandae, suscipit!
+        </div>
+        <br />
         <div>Карточки фильмов</div>
     </section>
 
-    <br/><br/>
+    <br /><br />
 
-    <div>
-        Карта
-    </div>
+<!-- Контакты, схема проезда -->
+    <section>
+        <div class="map-contacts">
+            <img class="map" alt="Схема проезда" title="Схема проезда" src="images/map.png">
+        </div>
+        <footer class="contacts">
+            <a href="http://twitter.com" title="twitter" target="_blank">
+                twitter
+            </a>
+            <a href="http://fb.com" title="fb" target="_blank">
+                facebook
+            </a>
+            <a href="http://instagram.com" title="im" target="_blank">
+                instagram
+            </a>
+        </footer>
+    </section>
 
-    <br/><br/>
 
-    <div>
-        Форма обратной связи
-    </div>
+<!-- Формы. Релиз 2.3 -->
+    <form class="form" method="POST" action="order.php" name="form" id="form">
+        <div>
+            <label for="firstname">Ваше имя:</label>
+            <input type="text" value="" placeholder="Апполинария" name="firstname" id="firstname" required>
+        </div>
+
+        <div>
+            <label for="e-mail">Электронная почта</label>
+            <input type="email" value="" placeholder="koto@mail.com" name="e-mail" id="e-mail" required>
+        </div>
+
+        <div>
+            <label for="select-place">Выберите место:</label>
+            <select aria-required="true" name="firstname" id="firstname" required>
+                <option selected disabled value="">Выберите</option>
+                <option value="1">Место 1</option>
+                <option value="2">Место 2</option>
+                <option value="3">Место 3</option>
+                <option value="4">Место 4</option>
+                <option value="5">Место 5</option>
+                <option value="6">Место 6</option>
+                <option value="7">Место 7</option>
+                <option value="8">Место 8</option>
+                <option value="9">Место 9</option>
+                <option value="10">Место 10</option>
+            </select>
+        </div>
+
+        <div>
+            <textarea class="text-area" placeholder="Ваш комментарий" id="comment"></textarea>
+        </div>
+
+        <!--<div>
+            <input type="radio" name="some" value="1" id="1"/><label for="1">первое</label><br/>
+            <input type="radio" name="some" value="2" id="2"/><label for="2">второе</label><br/>
+            <input type="radio" name="some" value="13" id="3"/><label for="3">одно из трёх</label>
+        </div>-->
+
+        <div>
+            <input type="checkbox" name="agree" id="agree" required/><label for="agree">Я даю согласие на обработку персональных данных</label>
+        </div>
+        
+        <div>
+            <input multiple name="choose-file" type="file" accept="application/pdf, application/msword, image/*"/>
+        </div>
+        
+        <!--button внутри формы. Так проще-->
+        <div>
+            <button type="submit">Заказать</button>
+        </div>
+
+        <!--input внутри формы-->
+    <!--
+        <div>
+            <input type="submit" value="Заказать">input</input>
+        </div>
+    -->
+    </form>
+
+        <!--button вне формы-->
+    <!--
+        <div style="margin-bottom: 30px;">
+            <button type="submit" form="form">Заказать</button>
+        </div>
+    -->
+        <!--input вне формы-->
+    <!--
+        <div>
+            <input type="submit" form="form" value="Заказать">input</input>
+        </div>
+    -->
+
 
 </body>
 

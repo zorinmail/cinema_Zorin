@@ -1,0 +1,367 @@
+/*обнуляем стили для тегов*/
+/*h1, h2, h3, h4, h5, h6, p, body {
+    box-sizing: border-box;
+    border: 0;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: transparent;
+}*/
+/*подключаем шрифты. На всякий случай пока все. добавить woff*/
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Thin.ttf') format('truetype');
+    font-weight: 100;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Light.ttf') format('truetype');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Black.ttf') format('truetype');
+    font-weight: 900;
+}
+
+
+/*body - шириной 1030, по центру, с изображением*/
+body {
+    width: 1030px;
+    margin: auto;
+    background: url(/images/background.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: right 0px top -80px;
+    font-family: 'Roboto', sans-serif;
+    color: #242424;
+}
+
+/*все абзацы*/
+p {
+    font-weight: 100;
+    font-size: 14px;
+    color: #242424;
+    line-height: 1.2;
+}
+
+
+.menu a {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline;
+    margin-left: 0px;
+    font-size: 15px;
+    font-weight: 100;
+    vertical-align: middle;
+}
+
+.menu li {
+    display: inline;
+}
+
+.ul_nav {
+    list-style: none;
+    margin-top: 53px;
+    padding-left: 0px;
+}
+
+/**
+много id потому, что в макете как-то неровно выставлены элементы меню,
+каждому id задан свой margin
+*/
+#logo
+{
+    display: inline;
+    margin: 0 257px 0 0;
+}
+#menu__event-details {margin: 0 0 0 0;}
+#menu__speakers {margin: 0 0 0 35px;}
+#menu__sponsors {margin: 0 0 0 42px;}
+#menu__past-events {margin: 0 0 0 41px;}
+#menu__contacts {margin: 0 0 0 35px;}
+
+
+/* в макете пока нет
+.menu_nav_li_city {
+    display: inline;
+    margin: 0 0 0 100px;
+}
+*/
+
+/* закажите билет в кино */
+.main-title {
+    margin: 165px 0 235px 0;
+    text-align: center;
+    color: white;
+    letter-spacing: 0.01em
+}
+h1 {
+    font-size: 80px;
+    font-weight: 100;
+    margin-bottom: 12px;
+}
+.main-title > b {
+    font-size: 50px;
+}
+
+.welcome {
+   /*display: inline;*/
+   /*width: 515px;*/
+   background: #ffffff; /* Цвет фона */
+   padding-top: 35px; /* Поля */
+   padding-left: 31px;
+   padding-right: 80px;
+   padding-bottom: 42px;
+   /*border: 1px solid gray;*/
+   margin-left: 517px;
+   box-shadow: 0px 1px 2px 0px rgba(35, 31, 32, 0.65);
+}
+
+.welcome h2 {
+    font-size: 40px;
+    font-weight: 900;
+    margin-bottom: 32px;
+}
+
+.welcome p {
+    margin-left: 1px;
+}
+
+.welcome p:first-of-type {
+    margin-bottom: 17px;
+}
+
+.why-we {
+    margin-top: -60px;
+}
+
+.why-we h2 {
+    font-size: 50px;
+    font-weight: 900;
+    margin-bottom: 110px;
+}
+.why-we h3 {
+    font-size: 35px;
+    font-weight: 900;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+
+/* Таблица Выберите фильм. Релиз 2.4 */
+.movie-list {
+    padding: 110px 0 0 0;
+}
+
+.movie-list__header-h2 { /*"выберите фильм"*/
+    font-size: 50px;
+    color: black;
+    font-weight: 700;
+    margin: 22px 0 84px 0;
+    text-align: center;
+}
+
+.container { /*в него помещена таблица*/
+    /*width: 1030px;*/
+    max-width: 1030px;
+    margin: 0 auto; /*по центру*/
+}
+
+.movie-list__table { /*стили таблицы*/
+    width: 100%;
+    border-collapse: collapse;
+    border: #fff;
+    border-radius: 15px;
+    overflow: hidden; /*чтобы работало скругление*/
+    font-size: 22.4px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.movie-list__table-h {
+    font-size: 26px; /*в макете 30px, но это многовато..*/
+    font-weight: 700;
+    color: #fff;
+    background: #a3cc40;
+    height: 76px;
+    
+}
+
+/* в имени класса h - заголовок таблицы, b - тело*/
+
+/* столбец начало сеанса */
+.movie-list__table-time-h {
+    text-align: center;
+    width: 230px; /*в макете 230px, но там время шире. Предлагаю сократить, 200px - норм*/
+    vertical-align: middle;
+}
+.movie-list__table-time-b {
+    text-align: center;
+    vertical-align: top;
+}
+
+/*столбец фильм*/
+.movie-list__table-film-h {
+    text-align: left;
+    width: 370px;
+    vertical-align: middle;
+}
+.movie-list__table-film-b {
+    text-align: left;
+    vertical-align: top;/*по-другому пока не знаю как сделать*/
+}
+
+/*столбец жанр*/
+.movie-list__table-genre-h {
+    text-align: left;
+    width: 300px;
+    vertical-align: middle;
+}
+.movie-list__table-genre-b {
+    text-align: left;
+    vertical-align: top;
+    /*padding-top: 10px;*/
+}
+
+/*столбец с плюсиками.
+Выравнивать все плюсики до макета не стал,
+потому что там они все разные, 
+пришлось бы каждому прописывать стиль*/
+.movie-list__table-plus {
+    width: 130px;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 7px;
+}
+
+/*тёмные строки*/
+.movie-list__table-dark {
+    background: #373737;
+    /*padding: 19px 0;*/
+    height: 74.5px;
+    border: #fff;
+    /*text-align: center;*/
+}
+
+/*светлые строки*/
+.movie-list__table-light {
+    background: #4b4d4f;
+    /*padding: 19px 0;*/
+    height: 74.5px;
+    border: #fff;
+    /*text-align: center;*/
+}
+
+tbody tr:nth-child(3n+3) {
+    background:#6c6c6c;
+}
+
+/*оформление ссылок в таблице*/
+.movie-list__table a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/*абзац под таблицей*/
+.movie-list__footer {
+    text-align: center;
+    margin: 39px 0 0 0;
+    letter-spacing: 0.013ex;
+}
+
+
+
+/* \triangles */
+a div {
+    display: inline-block;
+}
+.triangle-div-time {
+    vertical-align: top;
+    margin: 14px 0 0 8px;
+}
+.triangle-div-name {
+    vertical-align: top;
+    margin: -2px 0 0 8px;
+}
+.triangle-down {
+    display: inline-block;
+    width: 0px;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 7.5px 0 7.5px;
+    border-color: #ffffff transparent transparent transparent;
+}
+.triangle-up {
+    display: inline-block;
+    width: 0px;
+    height: 0;
+    border-style: solid;
+    border-width: 0 7.5px 10px 7.5px;
+    border-color: transparent transparent #ffffff transparent;
+}
+/* \triangles */
+
+
+/*секция подарок каждому*/
+.gift {
+    background: url(/images/gift-background.png);
+    height: 780px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+/*карта*/
+.map {
+    width: 1030px;
+}
+
+.contacts {
+    background: #90d23d;
+    height: 220px;
+    margin-bottom: 100px;
+}
+
+
+/*форма*/
+.form > div {
+    margin-bottom: 30px;
+}
+
+.text-area {
+    width: 300px;
+    height: 100px;
+    text-align: left;
+}
+
+
+.button{
+    text-decoration: none;
+    background: #a3cc40;
+    color: #ffffff;
+    border-radius: 15px;
+    padding: 20px 30px; 
+    font-size: 18px;
+}
+/**
+    color: rgb(37, 37, 37);
+    font-weight: bold;
+    line-height: 1.2;
+    */
