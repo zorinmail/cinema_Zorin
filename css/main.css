@@ -61,43 +61,31 @@ p {
     line-height: 1.2;
 }
 
-
+/*\меню*/
 .menu a {
     color: white;
     text-transform: uppercase;
     text-decoration: none;
-    display: inline;
     margin-left: 0px;
     font-size: 15px;
     font-weight: 100;
     vertical-align: middle;
 }
-
-.menu li {
-    display: inline;
-}
-
 .ul_nav {
     list-style: none;
-    margin-top: 53px;
+    margin-top: 55px;
     padding-left: 0px;
 }
-
-/**
-много id потому, что в макете как-то неровно выставлены элементы меню,
-каждому id задан свой margin
-*/
-#logo
-{
+.menu li {
     display: inline;
+    margin: 0 38.4px 0 0;
+}
+.menu li:first-child {
     margin: 0 257px 0 0;
 }
-#menu__event-details {margin: 0 0 0 0;}
-#menu__speakers {margin: 0 0 0 35px;}
-#menu__sponsors {margin: 0 0 0 42px;}
-#menu__past-events {margin: 0 0 0 41px;}
-#menu__contacts {margin: 0 0 0 35px;}
-
+.menu li:last-child {
+    margin: 0 0 0 0;
+}
 
 /* в макете пока нет
 .menu_nav_li_city {
@@ -108,7 +96,7 @@ p {
 
 /* закажите билет в кино */
 .main-title {
-    margin: 165px 0 235px 0;
+    margin: 163px 0 235px 0;
     text-align: center;
     color: white;
     letter-spacing: 0.01em
@@ -171,7 +159,7 @@ h1 {
     padding: 110px 0 0 0;
 }
 
-.movie-list__header-h2 { /*"выберите фильм"*/
+.movie-list__header2 { /*"выберите фильм"*/
     font-size: 50px;
     color: black;
     font-weight: 700;
@@ -223,10 +211,12 @@ h1 {
     text-align: left;
     width: 370px;
     vertical-align: middle;
+    padding-left: 60px;
 }
 .movie-list__table-film-b {
     text-align: left;
     vertical-align: top;/*по-другому пока не знаю как сделать*/
+    padding-left: 60px;
 }
 
 /*столбец жанр*/
@@ -250,6 +240,7 @@ h1 {
     text-align: center;
     vertical-align: middle;
     padding-top: 7px;
+    padding-right: 5px;
 }
 
 /*тёмные строки*/
@@ -317,6 +308,8 @@ a div {
     border-style: solid;
     border-width: 0 7.5px 10px 7.5px;
     border-color: transparent transparent #ffffff transparent;
+    vertical-align: top;
+    margin: 14px 0 0 8px;
 }
 /* \triangles */
 

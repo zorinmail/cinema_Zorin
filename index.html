@@ -20,22 +20,22 @@
     <header>
         <nav class="menu">
             <ul class="ul_nav">
-                <li id="logo">
+                <li>
                     <a href="http://university.innopolis.ru" target="_blank"><img title="Университет Иннополис" alt="Лого Иннополиса" src="images/logo.png" /></a>
                 </li>
-                <li id="menu__event-details">
+                <li>
                     <a title="Заказать билет" href="#">Event details</a>
                 </li>
-                <li id="menu__speakers">
+                <li>
                     <a title="Наши преимущества" href="#choose-the-film">Speakers</a>
                 </li>
-                <li id="menu__sponsors">
+                <li>
                     <a title="Фильмы" href="#">Sponsors</a>
                 </li>
-                <li id="menu__past-events">
+                <li>
                     <a title="Контакты" href="#">Past events</a>
                 </li>
-                <li id="menu__contacts">
+                <li>
                     <a title="Контакты" href="#">Contact</a>
                 </li>
 <!--
@@ -107,12 +107,12 @@
 <!-- Таблица Выберите фильм. Релиз 2.4 -->
     <section>
         <div class="movie-list">
-            <h2 id="choose-the-film" class="movie-list__header-h2">Выберите фильм</h2>
+            <h2 id="choose-the-film" class="movie-list__header2">Выберите фильм</h2>
             <div class="container">
                 <table class="movie-list__table">
                     <thead>
                         <tr class="movie-list__table-h">
-                            <th class="movie-list__table-time-h"><a href="#begin"><div>Начало <br /> сеанса</div><div class="triangle-div-time"><span class="triangle-up"></span></div></a></th>
+                            <th class="movie-list__table-time-h"><a href="#begin"><div>Начало <br /> сеанса</div><span class="triangle-up"></span></a></th>
                             <th class="movie-list__table-film-h"><a href="#name"><div>Название фильма</div><div class="triangle-div-name"><span class="triangle-down"></span></div></a></th>
                             <th class="movie-list__table-genre-h"><a href="#genre">Жанр</a></th>
                             <th class="movie-list__table-plus"></th>
@@ -254,7 +254,7 @@
 
 
 <!-- Формы. Релиз 2.3 -->
-    <form class="form" method="POST" action="order.php" name="form" id="form">
+    <form class="form" method="POST" action="order.php" name="form" id="form" enctype="multipart/form-data">
         <div>
             <label for="firstname">Ваше имя:</label>
             <input type="text" value="" placeholder="Апполинария" name="firstname" id="firstname" required>
@@ -308,7 +308,7 @@
         <!--input внутри формы-->
     <!--
         <div>
-            <input type="submit" value="Заказать">input</input>
+            <input type="submit" value="Заказать" />
         </div>
     -->
     </form>
@@ -322,7 +322,7 @@
         <!--input вне формы-->
     <!--
         <div>
-            <input type="submit" form="form" value="Заказать">input</input>
+            <input type="submit" form="form" value="Заказать" />
         </div>
     -->
 
