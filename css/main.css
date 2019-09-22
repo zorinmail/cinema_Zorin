@@ -300,6 +300,7 @@ a div {
     border-style: solid;
     border-width: 10px 7.5px 0 7.5px;
     border-color: #ffffff transparent transparent transparent;
+    margin: 1px 0 0 8px;
 }
 .triangle-up {
     display: inline-block;
@@ -309,7 +310,7 @@ a div {
     border-width: 0 7.5px 10px 7.5px;
     border-color: transparent transparent #ffffff transparent;
     vertical-align: top;
-    margin: 14px 0 0 8px;
+    margin: 23px 0 0 8px;
 }
 /* \triangles */
 
