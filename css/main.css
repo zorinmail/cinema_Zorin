@@ -41,16 +41,58 @@
 }
 
 
+/**
+.block01 {
+    background: url(../img/top_bg.jpg) no-repeat top center / cover;    
+    height: 100vh;
+}
+*/
+/*
+для скошенного фона
+.block01 {
+    position: relative;
+    height: 50vh;
+    overflow: hidden;
+}
+
+.block01:after {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 250px;
+    transform: rotate(-6deg);
+    background: #fff;
+    bottom: -80px;
+    left: 0;
+}
+
+или
+
+.block01:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 0px solid transparent;
+    border-top: 13vh solid transparent;
+    border-right: 200vh solid #fff;
+    border-bottom: 0px solid #fff;
+    position: absolute;
+    bottom: 0vh;
+}
+    */
+
+
 /*body - шириной 1030, по центру, с изображением*/
 body {
     width: 1030px;
     margin: auto;
-    background: url(/images/background.png);
+    /**background: url(/images/background.png);
     background-repeat: no-repeat;
     background-size: 100%;
-    background-position: right 0px top -80px;
+    background-position: right 0px top -80px;*/
     font-family: 'Roboto', sans-serif;
     color: #242424;
+    
 }
 
 /*все абзацы*/
@@ -59,6 +101,17 @@ p {
     font-size: 14px;
     color: #242424;
     line-height: 1.2;
+}
+
+.block01 {
+    width: 1030px;
+    height: 770px;
+    background: url(/images/background.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover 100%;    
+    height: 100vh;
+    overflow: hidden;
 }
 
 /*\меню*/
@@ -110,17 +163,29 @@ h1 {
     font-size: 50px;
 }
 
+
+
+.some_block {
+    width: 1030px;
+    position: relative;
+    margin: 0 auto;
+}
+
 .welcome {
    /*display: inline;*/
-   /*width: 515px;*/
+   width: 515px;
    background: #ffffff; /* Цвет фона */
    padding-top: 35px; /* Поля */
    padding-left: 31px;
    padding-right: 80px;
    padding-bottom: 42px;
    /*border: 1px solid gray;*/
-   margin-left: 517px;
+   /*margin-left: 517px;*/
    box-shadow: 0px 1px 2px 0px rgba(35, 31, 32, 0.65);
+   position: absolute;
+   top: -60px;
+   right: 20px;
+   z-index: 1;
 }
 
 .welcome h2 {
@@ -137,20 +202,50 @@ h1 {
     margin-bottom: 17px;
 }
 
+
+
+
+
+
 .why-we {
     margin-top: -60px;
+    margin: auto;
+}
+
+.block__col {
+    /*display: inline-block;*/
+    float: left;
+    width: 33.33%;
+    /*vertical-align: top;*/
+}
+.block__image {
+    height: 211px;
+    /*text-align: center;*/
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.block__image img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
 }
 
 .why-we h2 {
     font-size: 50px;
     font-weight: 900;
     margin-bottom: 110px;
+    text-align: left;
 }
 .why-we h3 {
     font-size: 35px;
     font-weight: 900;
     margin-top: 25px;
     margin-bottom: 25px;
+    text-align: center;
 }
 
 
