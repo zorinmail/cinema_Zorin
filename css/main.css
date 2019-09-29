@@ -1,45 +1,65 @@
-/*обнуляем стили для тегов*/
-/*h1, h2, h3, h4, h5, h6, p, body {
-    box-sizing: border-box;
-    border: 0;
-    margin: 0;
-    outline: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-    background: transparent;
-}*/
-/*подключаем шрифты. На всякий случай пока все. добавить woff*/
+/*\шрифты*/
 @font-face {
     font-family: 'Roboto';
-    src: url('../fonts/Roboto-Thin.ttf') format('truetype');
+    src: url('../fonts/Roboto-Thin.ttf') format('truetype'),
+         url('../fonts/Roboto-Thin.woff') format('woff'),
+         url('../fonts/Roboto-Thin.woff2') format('woff2'),
+         url('../fonts/Roboto-Thin.otf') format('opentype'),
+         url('../fonts/Roboto-Thin.eot') format('embedded-opentype'),
+         url('../fonts/Roboto-Thin.svg') format('svg');
     font-weight: 100;
 }
 @font-face {
     font-family: 'Roboto';
-    src: url('../fonts/Roboto-Light.ttf') format('truetype');
+    src: url('../fonts/Roboto-Light.ttf') format('truetype'),
+        url('../fonts/Roboto-Light.woff') format('woff'),
+        url('../fonts/Roboto-Light.woff2') format('woff2'),
+        url('../fonts/Roboto-Light.otf') format('opentype'),
+        url('../fonts/Roboto-Light.eot') format('embedded-opentype'),
+        url('../fonts/Roboto-Light.svg') format('svg');
     font-weight: 300;
 }
 @font-face {
     font-family: 'Roboto';
-    src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+    src: url('../fonts/Roboto-Regular.ttf') format('truetype'),
+        url('../fonts/Roboto-Regular.woff') format('woff'),
+        url('../fonts/Roboto-Regular.woff2') format('woff2'),
+        url('../fonts/Roboto-Regular.otf') format('opentype'),
+        url('../fonts/Roboto-Regular.eot') format('embedded-opentype'),
+        url('../fonts/Roboto-Regular.svg') format('svg');
     font-weight: 400;
 }
 @font-face {
     font-family: 'Roboto';
-    src: url('../fonts/Roboto-Medium.ttf') format('truetype');
+    src: url('../fonts/Roboto-Medium.ttf') format('truetype'),
+        url('../fonts/Roboto-Medium.woff') format('woff'),
+        url('../fonts/Roboto-Medium.woff2') format('woff2'),
+        url('../fonts/Roboto-Medium.otf') format('opentype'),
+        url('../fonts/Roboto-Medium.eot') format('embedded-opentype'),
+        url('../fonts/Roboto-Medium.svg') format('svg');
     font-weight: 500;
 }
 @font-face {
     font-family: 'Roboto';
-    src: url('../fonts/Roboto-Bold.ttf') format('truetype');
+    src: url('../fonts/Roboto-Bold.ttf') format('truetype'),
+        url('../fonts/Roboto-Bold.woff') format('woff'),
+        url('../fonts/Roboto-Bold.woff2') format('woff2'),
+        url('../fonts/Roboto-Bold.otf') format('opentype'),
+        url('../fonts/Roboto-Bold.eot') format('embedded-opentype'),
+        url('../fonts/Roboto-Bold.svg') format('svg');
     font-weight: 700;
 }
 @font-face {
     font-family: 'Roboto';
-    src: url('../fonts/Roboto-Black.ttf') format('truetype');
+    src: url('../fonts/Roboto-Black.ttf') format('truetype'),
+        url('../fonts/Roboto-Black.woff') format('woff'),
+        url('../fonts/Roboto-Black.woff2') format('woff2'),
+        url('../fonts/Roboto-Black.otf') format('opentype'),
+        url('../fonts/Roboto-Black.eot') format('embedded-opentype'),
+        url('../fonts/Roboto-Black.svg') format('svg');
     font-weight: 900;
 }
-
+/*\шрифты*/
 
 /**
 .block01 {
@@ -80,19 +100,10 @@
     bottom: 0vh;
 }
     */
-
-
-/*body - шириной 1030, по центру, с изображением*/
+/*\общие стили*/
 body {
-    width: 1030px;
-    margin: auto;
-    /**background: url(/images/background.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: right 0px top -80px;*/
     font-family: 'Roboto', sans-serif;
     color: #242424;
-    
 }
 
 /*все абзацы*/
@@ -102,42 +113,74 @@ p {
     color: #242424;
     line-height: 1.2;
 }
+/*\общие стили*/
 
-.block01 {
-    width: 1030px;
-    height: 770px;
+
+/*\экран 1*/
+.container-top {
     background: url(/images/background.png);
     background-repeat: no-repeat;
-    background-position: top center;
-    background-size: cover 100%;    
-    height: 100vh;
-    overflow: hidden;
+    background-size: 100%;
+    background-position: bottom;
+    padding-top: 54px;
 }
-
-/*\меню*/
-.menu a {
+.block-top {
+    width: 1030px;
+    margin: auto;
+}
+.nav {
+    margin: 0 0 165px 0;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+.nav__logo{
+    /*display: inline-block;*/
+}
+.nav__menu {
+    /*display: inline-block;*/
+    margin-left: 261px;
+}
+.nav__link {
     color: white;
     text-transform: uppercase;
     text-decoration: none;
-    margin-left: 0px;
+    /*margin-left: 0px;*/
     font-size: 15px;
     font-weight: 100;
     vertical-align: middle;
 }
-.ul_nav {
-    list-style: none;
-    margin-top: 55px;
-    padding-left: 0px;
+.nav__link:hover {
+    color: #90d23d;
 }
-.menu li {
+.menu{
+    list-style: none;
+}
+.menu__item {
     display: inline;
-    margin: 0 38.4px 0 0;
+    margin: 0 0 0 38.1px;
 }
 .menu li:first-child {
-    margin: 0 257px 0 0;
+    margin: 0;
 }
-.menu li:last-child {
-    margin: 0 0 0 0;
+.title {
+    padding-bottom: 363px;
+}
+.title__title {
+    color: white;
+    text-align: center;
+    color: white;
+    letter-spacing: 0.01em;
+    font-size: 80px;
+    font-weight: 100;
+    margin-bottom: 12px;
+}
+.title__subtitle {
+    color: white;
+    text-align: center;
+    color: white;
+    letter-spacing: 0.01em;
+    font-size: 50px;
 }
 
 /* в макете пока нет
@@ -146,128 +189,116 @@ p {
     margin: 0 0 0 100px;
 }
 */
-
-/* закажите билет в кино */
-.main-title {
-    margin: 163px 0 235px 0;
-    text-align: center;
-    color: white;
-    letter-spacing: 0.01em
-}
-h1 {
-    font-size: 80px;
-    font-weight: 100;
-    margin-bottom: 12px;
-}
-.main-title > b {
-    font-size: 50px;
-}
+/*\экран 1*/
 
 
-
-.some_block {
-    width: 1030px;
+/*\welcome*/
+.some-relative-block1 {
     position: relative;
-    margin: 0 auto;
+    width: 1030px;
+    margin: auto;
+    margin-bottom: 79px;
+    /*height: 10px;*/
+    /*background: #6c6c6c;*/
 }
-
 .welcome {
-   /*display: inline;*/
    width: 515px;
-   background: #ffffff; /* Цвет фона */
-   padding-top: 35px; /* Поля */
-   padding-left: 31px;
-   padding-right: 80px;
-   padding-bottom: 42px;
-   /*border: 1px solid gray;*/
-   /*margin-left: 517px;*/
+   background: #ffffff;
+   padding-bottom: 25px;
    box-shadow: 0px 1px 2px 0px rgba(35, 31, 32, 0.65);
    position: absolute;
-   top: -60px;
-   right: 20px;
+   top: -129px;
+   right: 0px;
    z-index: 1;
 }
-
-.welcome h2 {
+.welcome__header {
     font-size: 40px;
     font-weight: 900;
-    margin-bottom: 32px;
+    margin: 34px 0 32px 32px;
 }
-
-.welcome p {
-    margin-left: 1px;
+.welcome__text {
+    margin: 0 85px 17px 32px;
 }
+/*\welcome*/
 
-.welcome p:first-of-type {
-    margin-bottom: 17px;
+
+
+/*\why we*/
+.container-why-we {
 }
-
-
-
-
-
 
 .why-we {
-    margin-top: -60px;
+    width: 1030px;
     margin: auto;
 }
-
-.block__col {
-    /*display: inline-block;*/
-    float: left;
-    width: 33.33%;
-    /*vertical-align: top;*/
-}
-.block__image {
-    height: 211px;
-    /*text-align: center;*/
-    position: relative;
-    margin-bottom: 40px;
-}
-
-.block__image img {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-}
-
-.why-we h2 {
+.why-we__title {
     font-size: 50px;
     font-weight: 900;
-    margin-bottom: 110px;
+    margin-bottom: 124px;
     text-align: left;
 }
-.why-we h3 {
+.why-we__main-part {
+}
+.why-we__col {
+    float: left;
+    width: 33.33%;
+    text-align: center;
+    margin-bottom: 125px;
+}
+.why-we__image {
+    height: 211px;
+    margin-bottom: 40px;
+}
+.why-we__image1 {
+    margin-right: 39px;
+    margin-top: 2px;
+}
+.why-we__image2 {
+    margin-left: 34px;
+}
+.why-we__image3 {
+    margin-left: 44px;
+    margin-top: 29px;
+}
+.why-we__text1 {
+    margin-right: 39px;
+}
+.why-we__text2 {
+}
+.why-we__text3 {
+    margin-left: 44px;
+}
+.why-we__subtitle {
     font-size: 35px;
     font-weight: 900;
     margin-top: 25px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     text-align: center;
 }
+/*\why we*/
 
 
+
+
+
+
+
+/*\movie list*/
 /* Таблица Выберите фильм. Релиз 2.4 */
-.movie-list {
-    padding: 110px 0 0 0;
+.container-movie-list {
+    margin-bottom: 150px;
 }
-
-.movie-list__header2 { /*"выберите фильм"*/
+.movie-list {
+    width: 1030px;
+    margin: auto;
+}
+.movie-list__header { /*"выберите фильм"*/
     font-size: 50px;
     color: black;
     font-weight: 700;
-    margin: 22px 0 84px 0;
+    margin: 0 0 82px 0;
     text-align: center;
 }
-
-.container { /*в него помещена таблица*/
-    /*width: 1030px;*/
-    max-width: 1030px;
-    margin: 0 auto; /*по центру*/
-}
-
 .movie-list__table { /*стили таблицы*/
     width: 100%;
     border-collapse: collapse;
@@ -278,7 +309,6 @@ h1 {
     font-weight: 400;
     color: #fff;
 }
-
 .movie-list__table-h {
     font-size: 26px; /*в макете 30px, но это многовато..*/
     font-weight: 700;
@@ -287,9 +317,7 @@ h1 {
     height: 76px;
     
 }
-
 /* в имени класса h - заголовок таблицы, b - тело*/
-
 /* столбец начало сеанса */
 .movie-list__table-time-h {
     text-align: center;
@@ -313,7 +341,6 @@ h1 {
     vertical-align: top;/*по-другому пока не знаю как сделать*/
     padding-left: 60px;
 }
-
 /*столбец жанр*/
 .movie-list__table-genre-h {
     text-align: left;
@@ -337,7 +364,6 @@ h1 {
     padding-top: 7px;
     padding-right: 5px;
 }
-
 /*тёмные строки*/
 .movie-list__table-dark {
     background: #373737;
@@ -346,7 +372,6 @@ h1 {
     border: #fff;
     /*text-align: center;*/
 }
-
 /*светлые строки*/
 .movie-list__table-light {
     background: #4b4d4f;
@@ -355,27 +380,21 @@ h1 {
     border: #fff;
     /*text-align: center;*/
 }
-
 /*каждая третья - светлее*/
-tbody tr:nth-child(3n+3) {
+tbody tr:last-child {
     background:#6c6c6c;
 }
-
 /*оформление ссылок в таблице*/
 .movie-list__table a {
     text-decoration: none;
     color: #fff;
 }
-
 /*абзац под таблицей*/
 .movie-list__footer {
     text-align: center;
     margin: 39px 0 0 0;
     letter-spacing: 0.013ex;
 }
-
-
-
 /* \triangles */
 a div {
     display: inline-block;
@@ -408,29 +427,212 @@ a div {
     margin: 23px 0 0 8px;
 }
 /* \triangles */
+/*\movie list end*/
+
+
+
+/*\gift begin*/
+.some-relative-block2 {
+    position: relative;
+    width: 1030px;
+    margin: auto;
+}
+.gift-image {
+    position: absolute;
+    top: -65px;
+    bottom: 0;
+    right: 0;
+    left: 3px;
+    border-radius: 100%;
+    overflow: hidden;
+    width: 328px;
+    height: 328px;
+}
 
 
 /*секция подарок каждому*/
 .gift {
-    background: url(/images/gift-background.png);
-    height: 780px;
+    background: url(/images/background-gift.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-bottom:73px;
+}
+.gift__text {
+    width: 1030px;
+    margin: auto;
+    text-align: right;
+    color: white;
+}
+.gift__title {
+    padding-top: 142px;
+    font-size: 50px;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 57px;
+    margin-right: -5px;
+}
+.gift__paragraph {
+    color: white;
+    padding-left: 328px;
+    margin-bottom: 17px;
+}
+.gift__paragraph-last {
+    margin-bottom: 36px;
+}
+.gift__btn {
+    background: green;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
+    border-radius: 15px;
+    background-color: rgb(144, 210, 61);
+    padding: 18px 33px;
+    border: 0px; 
+    margin-bottom: 187px;   
+}
+/*\gift end*/
+
+
+
+
+/*\карточки фильмов*/
+.container-films {
+    margin-bottom: 90px;
+}
+.films {
+    width: 1030px;
+    margin: auto;
+    padding-left: 30px;
+}
+.films__title {
+    font-size: 50px;
+    color: rgb(37, 37, 37);
+    font-weight: 700;
+    margin-bottom: 40px;
+    padding: 0 330px 0 15px;
+}
+.films__paragraph {
+    margin-bottom: 60px;
+    padding: 0 330px 0 15px;
+    letter-spacing: 0.01em;
+}
+
+.movie-grid__flex {
+    display: flex;
+    margin: 0 -15px;
+    padding-left: 15px;
+}
+.movie-grid__item {
+    padding: 18.9px;
+}
+.movie-grid__inner1 {
+    position: relative;
+    overflow: hidden;
+}
+.movie-grid__description {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    bottom: -100%;
+    background: rgba(144,210,61,.8);
+    border-radius: 11px;
+    padding: 23px;
+    display: flex;
+    flex-direction: column;
+    transition: .2s;
+}
+.movie-grid__inner1:hover .movie-grid__description {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.movie-grid__text1{
+    font-size: 35px;
+    font-weight: 900;
+    color: #ffffff;
+    margin: 0 0 10px;
+}
+.movie-grid__hr {
+    width: 80px;
+    height: 8px;
+    border: 0;
+    box-shadow: none;
+    margin: 0 0 14px;
+    background: #fff;
+}
+.movie-grid__text2
+{
+    font-size: 18px;
+    color: #ffffff;
+    flex: 1;
+}
+.movie-grid__svg
+{
+    fill:#fff;
+    transition: .2s;
+}
+.movie-grid__svg:hover{
+    fill:green;
+}
+/*\карточки фильмов*/
+
+
+
+
+/*\карта*/
+.container-map {
+
+}
+.map {
+    padding: 225px 0;
+    background: url(/images/map.png);
     background-repeat: no-repeat;
     background-size: 100%;
 }
-
-/*карта*/
-.map {
-    width: 1030px;
-}
-
 .contacts {
     background: #90d23d;
-    height: 220px;
     margin-bottom: 100px;
+    text-align: center;
+    padding-bottom: 37px;
+}
+.contacts__links {
+    width: 1030px;
+    margin: auto;
+    padding-top: 60px;
+    margin-bottom: 26px;
+}
+.contacts__fin {
+    width: 1030px;
+    margin: auto;
+}
+.fin__text {
+    color: white;
+    font-size: 18px;
 }
 
+.social-network {
+    fill: white;
+    transition: .2s;
+}
+.social-network:hover {
+    fill: green;
+}
+/*\карта*/
 
-/*форма*/
+
+
+
+/*\форма*/
+.container-forms {
+
+}
+.form {
+    width: 1030px;
+    margin: auto;
+}
+
 .form > div {
     margin-bottom: 30px;
 }
@@ -440,18 +642,6 @@ a div {
     height: 100px;
     text-align: left;
 }
+/*\форма*/
 
 
-.button{
-    text-decoration: none;
-    background: #a3cc40;
-    color: #ffffff;
-    border-radius: 15px;
-    padding: 20px 30px; 
-    font-size: 18px;
-}
-/**
-    color: rgb(37, 37, 37);
-    font-weight: bold;
-    line-height: 1.2;
-    */
