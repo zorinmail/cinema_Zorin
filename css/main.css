@@ -109,9 +109,15 @@ body {
 /*все абзацы*/
 p {
     font-weight: 100;
-    font-size: 14px;
+    font-size: 0.7rem;
     color: #242424;
     line-height: 1.2;
+}
+a {
+    text-decoration: none;
+}
+html {
+    font-size: 1.464vw;
 }
 /*\общие стили*/
 
@@ -122,14 +128,17 @@ p {
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: bottom;
-    padding-top: 54px;
+    padding-top: 2.7rem;
+    padding-bottom: 18.15rem
 }
+
 .block-top {
-    width: 1030px;
+    width: 51.5rem;
     margin: auto;
 }
+
 .nav {
-    margin: 0 0 165px 0;
+    margin: 0 0 8.25rem 0;
     display: flex;
     align-items: center;
     flex-grow: 1;
@@ -139,48 +148,53 @@ p {
 }
 .nav__menu {
     /*display: inline-block;*/
-    margin-left: 261px;
+    margin-left: 13.05rem;
 }
 .nav__link {
     color: white;
     text-transform: uppercase;
     text-decoration: none;
     /*margin-left: 0px;*/
-    font-size: 15px;
+    font-size: 0.75rem;
     font-weight: 100;
     vertical-align: middle;
 }
 .nav__link:hover {
     color: #90d23d;
+
 }
 .menu{
     list-style: none;
 }
 .menu__item {
-    display: inline;
-    margin: 0 0 0 38.1px;
+    display: inline-block;
+    margin: 0 0 0 1.905rem;
+}
+.menu__item:hover {
+    border-bottom: 1px solid #90d23d;
+    padding-top: 1px; 
 }
 .menu li:first-child {
     margin: 0;
 }
 .title {
-    padding-bottom: 363px;
+    /*padding-bottom: 363px;*/
 }
 .title__title {
     color: white;
     text-align: center;
     color: white;
     letter-spacing: 0.01em;
-    font-size: 80px;
+    font-size: 4rem;
     font-weight: 100;
-    margin-bottom: 12px;
+    margin-bottom: 0.6rem;
 }
 .title__subtitle {
     color: white;
     text-align: center;
     color: white;
     letter-spacing: 0.01em;
-    font-size: 50px;
+    font-size: 2.5rem;
 }
 
 /* в макете пока нет
@@ -195,29 +209,29 @@ p {
 /*\welcome*/
 .some-relative-block1 {
     position: relative;
-    width: 1030px;
+    width: 51.5rem;
     margin: auto;
-    margin-bottom: 79px;
+    margin-bottom: 3.95rem;
     /*height: 10px;*/
     /*background: #6c6c6c;*/
 }
 .welcome {
-   width: 515px;
+   width: 25.75rem;
    background: #ffffff;
-   padding-bottom: 25px;
-   box-shadow: 0px 1px 2px 0px rgba(35, 31, 32, 0.65);
+   padding-bottom: 1.25rem;
+   box-shadow: 0rem 0.05rem 0.1rem 0rem rgba(35, 31, 32, 0.65);
    position: absolute;
-   top: -129px;
-   right: 0px;
+   top: -6.45rem;
+   right: 0rem;
    z-index: 1;
 }
 .welcome__header {
-    font-size: 40px;
+    font-size: 2rem;
     font-weight: 900;
-    margin: 34px 0 32px 32px;
+    margin: 1.7rem 0 1.6rem 1.6rem;
 }
 .welcome__text {
-    margin: 0 85px 17px 32px;
+    margin: 0 4.25rem 0.85rem 1.6rem;
 }
 /*\welcome*/
 
@@ -225,16 +239,17 @@ p {
 
 /*\why we*/
 .container-why-we {
+    margin-bottom: 6.25rem;
 }
 
 .why-we {
-    width: 1030px;
+    width: 51.5rem;
     margin: auto;
 }
 .why-we__title {
-    font-size: 50px;
+    font-size: 2.5rem;
     font-weight: 900;
-    margin-bottom: 124px;
+    margin-bottom: 6.2rem;
     text-align: left;
 }
 .why-we__main-part {
@@ -243,36 +258,40 @@ p {
     float: left;
     width: 33.33%;
     text-align: center;
-    margin-bottom: 125px;
+    margin-bottom: 2rem;
 }
-.why-we__image {
-    height: 211px;
-    margin-bottom: 40px;
+.why-we__image-container {
+    height: 10.55rem;
+    margin-bottom: 2rem;
+}
+.why-we__image:hover {
+    transform: scale(1.07);
+    transition: 0.2s;
 }
 .why-we__image1 {
-    margin-right: 39px;
-    margin-top: 2px;
+    margin-right: 1.95rem;
+    margin-top: 0.1rem;
 }
 .why-we__image2 {
-    margin-left: 34px;
+    margin-left: 1.7rem;
 }
 .why-we__image3 {
-    margin-left: 44px;
-    margin-top: 29px;
+    margin-left: 2.2rem;
+    margin-top: 1.45rem;
 }
 .why-we__text1 {
-    margin-right: 39px;
+    margin-right: 1.95rem;
 }
 .why-we__text2 {
 }
 .why-we__text3 {
-    margin-left: 44px;
+    margin-left: 2.2rem;
 }
 .why-we__subtitle {
-    font-size: 35px;
+    font-size: 1.75rem;
     font-weight: 900;
-    margin-top: 25px;
-    margin-bottom: 20px;
+    margin-top: 1.25rem;
+    margin-bottom: 1rem;
     text-align: center;
 }
 /*\why we*/
@@ -281,47 +300,45 @@ p {
 
 
 
-
-
 /*\movie list*/
 /* Таблица Выберите фильм. Релиз 2.4 */
 .container-movie-list {
-    margin-bottom: 150px;
+    margin-bottom: 7.5rem;
 }
 .movie-list {
-    width: 1030px;
+    width: 51.5rem;
     margin: auto;
 }
 .movie-list__header { /*"выберите фильм"*/
-    font-size: 50px;
+    font-size: 2.5rem;
     color: black;
     font-weight: 700;
-    margin: 0 0 82px 0;
+    margin: 0 0 4.1rem 0;
     text-align: center;
 }
 .movie-list__table { /*стили таблицы*/
     width: 100%;
     border-collapse: collapse;
     border: #fff;
-    border-radius: 15px;
+    border-radius: 0.75rem;
     overflow: hidden; /*чтобы работало скругление*/
-    font-size: 22.4px;
+    font-size: 1.12rem;
     font-weight: 400;
     color: #fff;
 }
 .movie-list__table-h {
-    font-size: 26px; /*в макете 30px, но это многовато..*/
+    font-size: 1.3rem; /*в макете 30px, но это многовато..*/
     font-weight: 700;
     color: #fff;
     background: #a3cc40;
-    height: 76px;
+    height: 3.8rem;
     
 }
 /* в имени класса h - заголовок таблицы, b - тело*/
 /* столбец начало сеанса */
 .movie-list__table-time-h {
     text-align: center;
-    width: 230px; /*в макете 230px, но там время шире. Предлагаю сократить, 200px - норм*/
+    width: 11.5rem; /*в макете 230px, но там время шире. Предлагаю сократить, 200px - норм*/
     vertical-align: middle;
 }
 .movie-list__table-time-b {
@@ -332,19 +349,19 @@ p {
 /*столбец фильм*/
 .movie-list__table-film-h {
     text-align: left;
-    width: 370px;
+    width: 18.5rem;
     vertical-align: middle;
-    padding-left: 60px;
+    padding-left: 3rem;
 }
 .movie-list__table-film-b {
     text-align: left;
     vertical-align: top;/*по-другому пока не знаю как сделать*/
-    padding-left: 60px;
+    padding-left: 3rem;
 }
 /*столбец жанр*/
 .movie-list__table-genre-h {
     text-align: left;
-    width: 300px;
+    width: 15rem;
     vertical-align: middle;
 }
 .movie-list__table-genre-b {
@@ -358,17 +375,17 @@ p {
 потому что там они все разные, 
 пришлось бы каждому прописывать стиль*/
 .movie-list__table-plus {
-    width: 130px;
+    width: 6.5rem;
     text-align: center;
     vertical-align: middle;
-    padding-top: 7px;
-    padding-right: 5px;
+    padding-top: 0.35rem;
+    padding-right: 0.25rem;
 }
 /*тёмные строки*/
 .movie-list__table-dark {
     background: #373737;
     /*padding: 19px 0;*/
-    height: 74.5px;
+    height: 3.725rem;
     border: #fff;
     /*text-align: center;*/
 }
@@ -376,7 +393,7 @@ p {
 .movie-list__table-light {
     background: #4b4d4f;
     /*padding: 19px 0;*/
-    height: 74.5px;
+    height: 3.725rem;
     border: #fff;
     /*text-align: center;*/
 }
@@ -392,7 +409,7 @@ tbody tr:last-child {
 /*абзац под таблицей*/
 .movie-list__footer {
     text-align: center;
-    margin: 39px 0 0 0;
+    margin: 1.95rem 0 0 0;
     letter-spacing: 0.013ex;
 }
 /* \triangles */
@@ -401,30 +418,30 @@ a div {
 }
 .triangle-div-time {
     vertical-align: top;
-    margin: 14px 0 0 8px;
+    margin: 0.7rem 0 0 0.4rem;
 }
 .triangle-div-name {
     vertical-align: top;
-    margin: 1px 0 0 8px;
+    margin: 0.05rem 0 0 0.4rem;
 }
 .triangle-down {
     display: inline-block;
-    width: 0px;
+    width: 0rem;
     height: 0;
     border-style: solid;
-    border-width: 10px 7.5px 0 7.5px;
+    border-width: 0.5rem 0.375rem 0 0.375rem;
     border-color: #ffffff transparent transparent transparent;
-    margin: 1px 0 0 8px;
+    margin: 0.05rem 0 0 0.4rem;
 }
 .triangle-up {
     display: inline-block;
-    width: 0px;
+    width: 0rem;
     height: 0;
     border-style: solid;
-    border-width: 0 7.5px 10px 7.5px;
+    border-width: 0 0.375rem 0.5rem 0.375rem;
     border-color: transparent transparent #ffffff transparent;
     vertical-align: top;
-    margin: 23px 0 0 8px;
+    margin: 1.15rem 0 0 0.4rem;
 }
 /* \triangles */
 /*\movie list end*/
@@ -434,19 +451,21 @@ a div {
 /*\gift begin*/
 .some-relative-block2 {
     position: relative;
-    width: 1030px;
+    width: 51.5rem;
     margin: auto;
 }
 .gift-image {
     position: absolute;
-    top: -65px;
+    top: -3.25rem;
     bottom: 0;
     right: 0;
-    left: 3px;
+    left: 0.15rem;
     border-radius: 100%;
+    background-color: rgb(251, 175, 22);
+    box-shadow: 0.525rem 0.909rem 0.6rem 0rem rgba(35, 31, 32, 0.55);
     overflow: hidden;
-    width: 328px;
-    height: 328px;
+    width: 16.4rem;
+    height: 16.4rem;
 }
 
 
@@ -455,40 +474,40 @@ a div {
     background: url(/images/background-gift.png);
     background-repeat: no-repeat;
     background-size: 100%;
-    margin-bottom:73px;
+    margin-bottom:3.65rem;
 }
 .gift__text {
-    width: 1030px;
+    width: 51.5rem;
     margin: auto;
     text-align: right;
     color: white;
 }
 .gift__title {
-    padding-top: 142px;
-    font-size: 50px;
+    padding-top: 7.1rem;
+    font-size: 2.5rem;
     font-weight: 900;
     color: white;
-    margin-bottom: 57px;
-    margin-right: -5px;
+    margin-bottom: 2.85rem;
+    margin-right: -0.25rem;
 }
 .gift__paragraph {
     color: white;
-    padding-left: 328px;
-    margin-bottom: 17px;
+    padding-left: 16.4rem;
+    margin-bottom: 0.85rem;
 }
 .gift__paragraph-last {
-    margin-bottom: 36px;
+    margin-bottom: 1.8rem;
 }
 .gift__btn {
     background: green;
-    font-size: 18px;
+    font-size: 0.9rem;
     color: rgb(255, 255, 255);
     line-height: 1.2;
-    border-radius: 15px;
+    border-radius: 0.75rem;
     background-color: rgb(144, 210, 61);
-    padding: 18px 33px;
-    border: 0px; 
-    margin-bottom: 187px;   
+    padding: 0.9rem 1.65rem;
+    border: 0rem; 
+    margin-bottom: 9.35rem;
 }
 /*\gift end*/
 
@@ -497,37 +516,38 @@ a div {
 
 /*\карточки фильмов*/
 .container-films {
-    margin-bottom: 90px;
+    margin-bottom: 4.5rem;
 }
 .films {
-    width: 1030px;
+    width: 51.5rem;
     margin: auto;
-    padding-left: 30px;
+    padding-left: 1.5rem;
 }
 .films__title {
-    font-size: 50px;
+    font-size: 2.5rem;
     color: rgb(37, 37, 37);
     font-weight: 700;
-    margin-bottom: 40px;
-    padding: 0 330px 0 15px;
+    margin-bottom: 2rem;
+    padding: 0 16.5rem 0 0.75rem;
 }
 .films__paragraph {
-    margin-bottom: 60px;
-    padding: 0 330px 0 15px;
+    margin-bottom: 3rem;
+    padding: 0 16.5rem 0 0.75rem;
     letter-spacing: 0.01em;
 }
 
 .movie-grid__flex {
     display: flex;
-    margin: 0 -15px;
-    padding-left: 15px;
+    margin: 0 -0.75rem;
+    padding-left: 0.75rem;
 }
 .movie-grid__item {
-    padding: 18.9px;
+    padding: 0.945rem;
 }
 .movie-grid__inner1 {
     position: relative;
     overflow: hidden;
+    border-radius: 0.55rem;
 }
 .movie-grid__description {
     position: absolute;
@@ -536,8 +556,8 @@ a div {
     top: 100%;
     bottom: -100%;
     background: rgba(144,210,61,.8);
-    border-radius: 11px;
-    padding: 23px;
+    /*border-radius: 11px;*/
+    padding: 1.15rem;
     display: flex;
     flex-direction: column;
     transition: .2s;
@@ -549,22 +569,22 @@ a div {
     bottom: 0;
 }
 .movie-grid__text1{
-    font-size: 35px;
+    font-size: 1.75rem;
     font-weight: 900;
     color: #ffffff;
-    margin: 0 0 10px;
+    margin: 0 0 0.5rem;
 }
 .movie-grid__hr {
-    width: 80px;
-    height: 8px;
+    width: 4rem;
+    height: 0.4rem;
     border: 0;
     box-shadow: none;
-    margin: 0 0 14px;
+    margin: 0 0 0.7rem;
     background: #fff;
 }
 .movie-grid__text2
 {
-    font-size: 18px;
+    font-size: 0.9rem;
     color: #ffffff;
     flex: 1;
 }
@@ -586,40 +606,46 @@ a div {
 
 }
 .map {
-    padding: 225px 0;
+    padding: 11.25rem 0;
     background: url(/images/map.png);
     background-repeat: no-repeat;
     background-size: 100%;
 }
+/*\карта*/
+
+/*\footer*/
 .contacts {
     background: #90d23d;
-    margin-bottom: 100px;
+    margin-bottom: 5rem;
     text-align: center;
-    padding-bottom: 37px;
+    padding-bottom: 1.85rem;
 }
 .contacts__links {
-    width: 1030px;
+    width: 51.5rem;
     margin: auto;
-    padding-top: 60px;
-    margin-bottom: 26px;
+    padding-top: 3rem;
+    margin-bottom: 1.3rem;
 }
 .contacts__fin {
-    width: 1030px;
+    width: 51.5rem;
     margin: auto;
 }
 .fin__text {
     color: white;
-    font-size: 18px;
+    font-size: 0.9rem;
 }
 
-.social-network {
+.social-network__path {
     fill: white;
     transition: .2s;
 }
-.social-network:hover {
+.social-network__path:hover {
     fill: green;
 }
-/*\карта*/
+.social-network__path:hover {    
+    filter: url(#social-network__filter_without-ten);  
+}
+/*\footer*/
 
 
 
@@ -629,17 +655,17 @@ a div {
 
 }
 .form {
-    width: 1030px;
+    width: 51.5rem;
     margin: auto;
 }
 
 .form > div {
-    margin-bottom: 30px;
+    margin-bottom: 1.5rem;
 }
 
 .text-area {
-    width: 300px;
-    height: 100px;
+    width: 15rem;
+    height: 5rem;
     text-align: left;
 }
 /*\форма*/

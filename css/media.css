@@ -1,0 +1,146 @@
+@media (max-width: 1200px) {
+    p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    html {
+        font-size: 15px;
+    }
+}
+@media (max-width: 800px) {
+    .nav__menu {
+        margin-left: 4.05rem;
+    }
+}
+@media (max-width: 600px) {
+
+}
+
+
+@media (max-width: 1200px) {
+    .simple-text {
+      font-size: 0.9rem;
+    }
+  }
+  @media (max-width: 1000px) {
+    html {
+      font-size: 15px;
+    }
+  }
+  @media (max-width: 800px) {
+    .container {
+      width: 40rem;
+    }
+    .block01__nav li + li {
+      margin-left: 0.15rem;
+    }
+    .block01__col3 {
+      width: 20%;
+    }
+    .block01__col2 {
+      width: 56%;
+    }
+    .block01__col1 {
+      width: 24%;
+    }
+    .block01__nav,
+    .block01__city {
+      padding-top: 0.3rem;
+    }
+    .block01__h1 {
+      font-size: 3.5rem;
+    }
+    .block01__h2 {
+      font-size: 2.1rem;
+    }
+    .block01 {
+      min-height: 0;
+    }
+    .block02__info {
+      width: 57%;
+      top: -13rem;
+    }
+    .block03__table-wrap {
+      overflow: auto;
+    }
+    .block03__table {
+      width: 800px;
+    }
+    .block05__text2 {
+      font-size: 1.5rem;
+    }
+  }
+  @media (max-width: 600px) {
+    .container {
+      width: 30rem;
+    }
+    .menu-burger span,
+    .menu-burger::before,
+    .menu-burger::after {
+      content: "";
+      width: 100%;
+      left: 0;
+      background: #fff;
+      height: 1px;
+      display: block;
+      position: absolute;
+    }
+    .menu-burger {
+      position: relative;
+      width: 20px;
+      height: 19px;
+      cursor: pointer;
+    }
+    .menu-burger span {
+      top: 9px;
+    }
+    .menu-burger::before {
+      top: 0;
+    }
+    .menu-burger::after {
+      bottom: 0;
+    }
+    .block01__nav {
+      display: none;
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      padding: 3rem 1rem;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 2;
+    }
+    .block01__nav li {
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .block01__col1 {
+      width: 30%;
+    }
+    .block01__col2 {
+      width: 20%;
+    }
+    .block01__col3 {
+      width: 50%;
+    }
+    .block02__info{
+        position:static;
+        width: 100%;
+    }
+    .block02__pluses
+    {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .block02__plus
+    {
+        flex-basis: 50%
+    }
+    .block05__inner
+    {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
