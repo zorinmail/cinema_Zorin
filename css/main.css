@@ -117,7 +117,8 @@ a {
     text-decoration: none;
 }
 html {
-    font-size: 1.464vw;
+    /*font-size: 1.042vw;*/
+    font-size: 1.297vw;
 }
 /*\общие стили*/
 
@@ -127,9 +128,10 @@ html {
     background: url(/images/background.png);
     background-repeat: no-repeat;
     background-size: 100%;
-    background-position: bottom;
+    /*background-position: bottom;*/
     padding-top: 2.7rem;
-    padding-bottom: 18.15rem
+    padding-bottom: 18.15rem;
+    position: relative;
 }
 
 .block-top {
@@ -148,7 +150,7 @@ html {
 }
 .nav__menu {
     /*display: inline-block;*/
-    margin-left: 13.05rem;
+    margin-left: 12.88rem;
 }
 .nav__link {
     color: white;
@@ -196,7 +198,17 @@ html {
     letter-spacing: 0.01em;
     font-size: 2.5rem;
 }
-
+.container-top::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 0px solid transparent;
+    border-top: 8vw solid transparent;
+    border-right: 98.9vw solid #fff;
+    border-bottom: 0px solid #fff;
+    position: absolute;
+    bottom: 0vh;
+}
 /* в макете пока нет
 .menu_nav_li_city {
     display: inline;
@@ -211,7 +223,7 @@ html {
     position: relative;
     width: 51.5rem;
     margin: auto;
-    margin-bottom: 3.95rem;
+    margin-bottom: 4.1rem;
     /*height: 10px;*/
     /*background: #6c6c6c;*/
 }
@@ -221,17 +233,17 @@ html {
    padding-bottom: 1.25rem;
    box-shadow: 0rem 0.05rem 0.1rem 0rem rgba(35, 31, 32, 0.65);
    position: absolute;
-   top: -6.45rem;
-   right: 0rem;
+   top: -6.25rem;
+   right: -0.2rem;
    z-index: 1;
 }
 .welcome__header {
     font-size: 2rem;
     font-weight: 900;
-    margin: 1.7rem 0 1.6rem 1.6rem;
+    margin: 1.7rem 0 1.7rem 1.6rem;
 }
 .welcome__text {
-    margin: 0 4.25rem 0.85rem 1.6rem;
+    margin: 0 4.25rem 0.95rem 1.6rem;
 }
 /*\welcome*/
 
@@ -239,7 +251,7 @@ html {
 
 /*\why we*/
 .container-why-we {
-    margin-bottom: 6.25rem;
+    margin-bottom: 4.35rem;
 }
 
 .why-we {
@@ -262,7 +274,7 @@ html {
 }
 .why-we__image-container {
     height: 10.55rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.2rem;
 }
 .why-we__image:hover {
     transform: scale(1.07);
@@ -476,24 +488,28 @@ a div {
     background-size: 100%;
     margin-bottom:3.65rem;
 }
-.gift__text {
+.gift__container {
     width: 51.5rem;
     margin: auto;
     text-align: right;
     color: white;
 }
+.gift__text {
+    padding-left: 16.4rem;
+    padding-top: 7.2rem;
+    padding-bottom: 9.35rem;
+}
+
 .gift__title {
-    padding-top: 7.1rem;
     font-size: 2.5rem;
     font-weight: 900;
     color: white;
-    margin-bottom: 2.85rem;
+    margin-bottom: 2.95rem;
     margin-right: -0.25rem;
 }
 .gift__paragraph {
     color: white;
-    padding-left: 16.4rem;
-    margin-bottom: 0.85rem;
+    margin-bottom: 1.05rem;
 }
 .gift__paragraph-last {
     margin-bottom: 1.8rem;
@@ -506,8 +522,8 @@ a div {
     border-radius: 0.75rem;
     background-color: rgb(144, 210, 61);
     padding: 0.9rem 1.65rem;
-    border: 0rem; 
-    margin-bottom: 9.35rem;
+    border: 0rem;
+    margin-right: -0.2rem;
 }
 /*\gift end*/
 
@@ -516,7 +532,7 @@ a div {
 
 /*\карточки фильмов*/
 .container-films {
-    margin-bottom: 4.5rem;
+    margin-bottom: 4rem;
 }
 .films {
     width: 51.5rem;
@@ -542,7 +558,7 @@ a div {
     padding-left: 0.75rem;
 }
 .movie-grid__item {
-    padding: 0.945rem;
+    padding: 1.045rem;
 }
 .movie-grid__inner1 {
     position: relative;
@@ -575,18 +591,23 @@ a div {
     margin: 0 0 0.5rem;
 }
 .movie-grid__hr {
-    width: 4rem;
-    height: 0.4rem;
+    width: 4.05rem;
+    height: 0.35rem;
     border: 0;
     box-shadow: none;
-    margin: 0 0 0.7rem;
+    margin: 0 0 0.7rem -0.1rem;
     background: #fff;
 }
 .movie-grid__text2
 {
     font-size: 0.9rem;
+    font-weight: 400;
     color: #ffffff;
     flex: 1;
+}
+.movie-grid__links {
+    padding: 0 0 0 0.2rem;
+    margin-bottom: -0.3rem;
 }
 .movie-grid__svg
 {
@@ -603,10 +624,10 @@ a div {
 
 /*\карта*/
 .container-map {
-
+    margin-bottom: 5rem;
 }
 .map {
-    padding: 11.25rem 0;
+    padding: 11.35rem 0;
     background: url(/images/map.png);
     background-repeat: no-repeat;
     background-size: 100%;
@@ -616,7 +637,7 @@ a div {
 /*\footer*/
 .contacts {
     background: #90d23d;
-    margin-bottom: 5rem;
+    
     text-align: center;
     padding-bottom: 1.85rem;
 }
@@ -625,6 +646,10 @@ a div {
     margin: auto;
     padding-top: 3rem;
     margin-bottom: 1.3rem;
+}
+.social-network {
+    display: inline-block;
+    padding: 0 0.18rem;
 }
 .contacts__fin {
     width: 51.5rem;
