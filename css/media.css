@@ -31,7 +31,7 @@
   }
   @media (max-width: 800px) {
     .container {
-      width: 40rem;
+      /*width: 40rem;*/
     }
     .block01__nav li + li {
       margin-left: 0.15rem;

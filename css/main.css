@@ -133,10 +133,11 @@ html {
     padding-bottom: 18.15rem;
     position: relative;
     overflow: hidden;
+    margin-bottom: 4.1rem;
 }
 
 .block-top {
-    width: 51.5rem;
+    /*width: 51.5rem;*/
     margin: auto;
 }
 
@@ -151,7 +152,7 @@ html {
 }
 .nav__menu {
     /*display: inline-block;*/
-    margin-left: 12.88rem;
+    margin-left: 12rem;
 }
 .nav__link {
     color: white;
@@ -172,10 +173,11 @@ html {
 .menu__item {
     display: inline-block;
     margin: 0 0 0 1.905rem;
+    border: 1px solid transparent;
 }
 .menu__item:hover {
     border-bottom: 1px solid #90d23d;
-    padding-top: 1px; 
+    /*padding-top: 1px; */
 }
 .menu li:first-child {
     margin: 0;
@@ -222,7 +224,7 @@ html {
 /*\welcome*/
 .some-relative-block1 {
     position: relative;
-    width: 51.5rem;
+    /*width: 51.5rem;*/
     margin: auto;
     margin-bottom: 4.1rem;
     /*height: 10px;*/
@@ -235,7 +237,7 @@ html {
    box-shadow: 0rem 0.05rem 0.1rem 0rem rgba(35, 31, 32, 0.65);
    position: absolute;
    top: -6.25rem;
-   right: -0.2rem;
+   right: 0rem;
    z-index: 1;
 }
 .welcome__header {
@@ -259,7 +261,8 @@ html {
 }
 
 .why-we {
-    width: 51.5rem;
+    /*width: 51.5rem;*/
+    position: relative;
     margin: auto;
 }
 .why-we__title {
@@ -268,17 +271,24 @@ html {
     margin-bottom: 6.2rem;
     text-align: left;
 }
-.why-we__main-part {
+.why-we__main-part .why-we__row:last-child {
+    margin-bottom: 0;
 }
+
+
+.why-we__row {
+    margin-bottom: 2rem;
+}
+
 .why-we__col {
     float: left;
     width: 33.33%;
     text-align: center;
-    margin-bottom: 2rem;
+    /*margin-bottom: 2rem;*/
 }
-.why-we__col-bottom {
+/**.why-we__col-bottom {
     margin-bottom: 0;
-}
+}*/
 .why-we__image-container {
     height: 10.55rem;
     margin-bottom: 2.2rem;
@@ -340,7 +350,7 @@ html {
     margin-bottom: 7.5rem;
 }
 .movie-list {
-    width: 51.5rem;
+    /*width: 51.5rem;*/
     margin: auto;
 }
 .movie-list__header { /*"выберите фильм"*/
@@ -488,7 +498,7 @@ a div {
 /*\gift begin*/
 .some-relative-block2 {
     position: relative;
-    width: 51.5rem;
+    /*width: 51.5rem;*/
     margin: auto;
 }
 .gift-image {
@@ -503,7 +513,7 @@ a div {
     overflow: hidden;
     width: 16.4rem;
     height: 16.4rem;
-    z-index: 2;
+    z-index: 10;
 }
 
 
@@ -517,7 +527,8 @@ a div {
     overflow: hidden;
 }
 .gift__container {
-    width: 51.5rem;
+    /*width: 51.5rem;*/
+    position: relative;
     margin: auto;
     text-align: right;
     color: white;
@@ -686,7 +697,7 @@ a div {
     padding-bottom: 1.85rem;
 }
 .contacts__links {
-    width: 51.5rem;
+    /*width: 51.5rem;*/
     margin: auto;
     padding-top: 3rem;
     margin-bottom: 1.3rem;
@@ -696,7 +707,7 @@ a div {
     padding: 0 0.18rem;
 }
 .contacts__fin {
-    width: 51.5rem;
+    /*width: 51.5rem;*/
     margin: auto;
 }
 .fin__text {
@@ -723,7 +734,7 @@ a div {
 
 }
 .form {
-    width: 51.5rem;
+    /*width: 51.5rem;*/
     margin: auto;
 }
 
@@ -753,3 +764,30 @@ a div {
 /*\форма*/
 
 
+#modalPresent {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 1000;
+}
+#modalPresent .form2 {
+    width: 25rem;
+    background-color: white;
+    margin: auto;
+    padding: 2rem;
+    margin-top: 5rem;
+    opacity: 1;
+    position: relative;
+}
+.form2 div {
+    margin-bottom: 2rem;
+}
+#closeModal{
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
