@@ -445,9 +445,9 @@ html {
     /*text-align: center;*/
 }
 /*каждая третья - светлее*/
-tbody tr:last-child {
+/* tbody tr:last-child {
     background:#6c6c6c;
-}
+} */
 /*оформление ссылок в таблице*/
 .movie-list__table a {
     text-decoration: none;
