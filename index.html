@@ -316,9 +316,9 @@
                         laudantium neque nihil omnis perferendis sed sequi tempore! Ad ea esse ex inventore repudiandae, suscipit!
                     </p>
             </div>
-            <div class="owl-carousel">
-            <!-- <div class="movie-grid__flex owl-carousel"> -->
-                <div class="movie-grid__item">
+            <!-- <div class="owl-carousel"> -->
+            <div class="movie-grid__flex owl-carousel" id = "movie-grid">
+                <!-- <div class="movie-grid__item">
                     <div class="movie-grid__inner1">
                         <div class="movie-grid__poster">
                             <img class="movie-grid__image" src="images/spyder-man.png" alt="Человек-паук" title="Человек-паук">
@@ -671,7 +671,7 @@
                 <div class="movie-grid__item">
                     <div class="movie-grid__inner1">
                         <div class="movie-grid__poster">
-                            <img class="movie-grid__image" src="images/spyder-man.png" alt="Человек-паук" title="Человек-паук">
+                            <img class="movie-grid__image" src="images/ghost.png" alt="Человек-паук" title="Человек-паук">
                         </div>
                         <div class="movie-grid__description">
                             <p class="movie-grid__text1">Человек-паук</p>
@@ -1366,7 +1366,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         
@@ -1647,12 +1647,45 @@
             </div>
     </div>
 
+    <div id="orderForm">
+        <div class="form2" method="POST" action="order.php" name="form" enctype="multipart/form-data">
+            <button id="closeOrderForm">X</button>
+            <div>
+                <label for="firstname">Ваше имя:</label>
+                <input type="text" value="" placeholder="Апполинария" name="firstname" id="firstname2" required>
+            </div>
+
+            <div>
+                <label for="e-mail">Электронная почта</label>
+                <input type="email" value="" placeholder="koto@mail.com" name="e-mail" id="e-mail2" required>
+            </div>
+
+            <div>
+                <label for="choose2">Выберите подарок:</label>
+                <select aria-required="true" name="choose2" id="choose2" required>
+                    <option selected disabled value="">Выберите</option>
+                    <option value="1">Билет</option>
+                    <option value="2">Деньги</option>
+                    <option value="3">Больше денег</option>
+                    <option value="4">Много денег</option>
+                </select>
+            </div>
+            <div>
+                <button class="form__btn" type="submit" id="send_gift2">Заказать</button>
+            </div>
+        </div>
+</div>
+
+
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/owl.carousel.js"></script>
 
-    <script src="js/films_4.4.js"></script>
+    <script src="js/films_4.8.js"></script>
+    <!-- <script src="js/test.js"></script> -->
     <!-- <script src="js/films.js"></script> -->
     <script src="js/get_gift.js"></script>
+    <!-- <script src="js/films_4.4.js"></script> -->
+
 
     <script>
         $(document).ready(function(){

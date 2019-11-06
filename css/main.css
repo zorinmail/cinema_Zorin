@@ -791,3 +791,32 @@ a div {
     right: 1rem;
     top: 1rem;
 }
+
+#orderForm {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 1000;
+}
+#orderForm .form2 {
+    width: 25rem;
+    background-color: white;
+    margin: auto;
+    padding: 2rem;
+    margin-top: 5rem;
+    opacity: 1;
+    position: relative;
+}
+
+#closeOrderForm{
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+/* tr:hover td {
+    color: green;
+} */
