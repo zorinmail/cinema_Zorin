@@ -977,21 +977,23 @@
 </div>
 
 
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/owl.carousel.js"></script>
-
-    <script src="js/films_4.8.js"></script>
+    <script>
+        $(document).ready(function(){
+        $(".owl-carousel").owlCarousel();
+        });
+    </script>
+    <script type="text/babel" src="js/films.js"></script>
+    <!-- <script src="js/films_4.8.js"></script> -->
     <!-- <script src="js/test.js"></script> -->
     <!-- <script src="js/films.js"></script> -->
     <script src="js/get_gift.js"></script>
     <!-- <script src="js/films_4.4.js"></script> -->
 
 
-    <script>
-        $(document).ready(function(){
-        $(".owl-carousel").owlCarousel();
-        });
-    </script>
+
 
 </body>
 </html>

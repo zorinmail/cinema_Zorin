@@ -11,6 +11,9 @@
   "author": "Yang Zhao",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
     "animate.css": "git+https://github.com/daneden/animate.css.git",
     "babel-core": "^6.7.2",
     "babel-eslint": "^6.1.0",
