@@ -11,6 +11,7 @@ const film = {
             filmNew: true,
             image: 'images/spyder-man.png',
             socialNetworks: ['https://www.facebook.com', 'https://twitter.com/', 'https://www.behance.net', 'https://dribbble.com'],
+            price: 350,
         },
         {
             start: '12:00',
@@ -21,6 +22,7 @@ const film = {
             filmNew: true,
             image: 'images/dogs-life.png',
             socialNetworks: ['https://www.facebook.com', 'https://twitter.com/', 'https://www.behance.net', 'https://dribbble.com'],
+            price: 300,
         },
         {
             start: '14:00',
@@ -31,6 +33,7 @@ const film = {
             filmNew: false,
             image: 'images/toy_story_4.png',
             socialNetworks: ['https://www.facebook.com', 'https://twitter.com/', 'https://www.behance.net', 'https://dribbble.com'],
+            price: 250,
         },
         {
             start: '16:00',
@@ -41,6 +44,7 @@ const film = {
             filmNew: false,
             image: 'images/MIB.png',
             socialNetworks: ['https://www.facebook.com', 'https://twitter.com/', 'https://www.behance.net', 'https://dribbble.com'],
+            price: 400,
         },
         {
             start: '18:00',
@@ -51,16 +55,18 @@ const film = {
             filmNew: true,
             image: 'images/lego_2.png',
             socialNetworks: ['https://www.facebook.com', 'https://twitter.com/', 'https://www.behance.net', 'https://dribbble.com'],
+            price: 300,
         },
         {
             start: '24:00',
             name: 'Zомбилэнд: контрольный выстрел',
             link: 'https://www.kinopoisk.ru/film/dobro-pozhalovat-v-zombilend-2-2019-489414/',
             genre: [7, 1, 4],
-            filmHire: false,
+            filmHire: true,
             filmNew: true,
             image: 'images/Zомбилэнд.png',
             socialNetworks: ['https://www.facebook.com', 'https://twitter.com/', 'https://www.behance.net', 'https://dribbble.com'],
+            price: 350,
         },
         {
             start: '19:00',
@@ -71,6 +77,105 @@ const film = {
             filmNew: false,
             image: 'images/ghost.png',
             socialNetworks: ['https://www.facebook.com', 'https://twitter.com/', 'https://www.behance.net', 'https://dribbble.com'],
+            price: 250,
+        },
+    ],
+    places: [
+        {
+            number: '1',
+            price: '1',
+            booking: false,
+            row: 1
+        },
+        {
+            number: '2',
+            price: '1',
+            booking: false,
+            row: 1
+        },
+        {
+            number: '3',
+            price: '1.2',
+            booking: true,
+            row: 1
+        },
+        {
+            number: '4',
+            price: '1.2',
+            booking: false,
+            row: 1
+        },
+        {
+            number: '5',
+            price: '1.2',
+            booking: false,
+            row: 1
+        },
+        {
+            number: '6',
+            price: '1.2',
+            booking: false,
+            row: 1
+        },
+        {
+            number: '7',
+            price: '1',
+            booking: false,
+            row: 1
+        },
+        {
+            number: '8',
+            price: '1',
+            booking: false,
+            row: 1
+        },
+        {
+            number: '9',
+            price: '1',
+            booking: false,
+            row: 2
+        },
+        {
+            number: '10',
+            price: '1',
+            booking: false,
+            row: 2
+        },
+        {
+            number: '11',
+            price: '1',
+            booking: false,
+            row: 2
+        },
+        {
+            number: '12',
+            price: '1.2',
+            booking: false,
+            row: 2
+        },
+        {
+            number: '13',
+            price: '1.2',
+            booking: false,
+            row: 2
+        },
+        {
+            number: '14',
+            price: '1',
+            booking: false,
+            row: 2
+        },
+        {
+            number: '15',
+            price: '1',
+            booking: true,
+            row: 2
+        },
+        {
+            number: '16',
+            price: '1',
+            booking: false,
+            row: 2
         },
     ],
 
@@ -125,6 +230,20 @@ const film = {
         };
     },
 
+    // getPrice: function (keyWord) {
+    //     if (keyWord == "new") {
+    //         for (let i = 0; i < this.sortFilms()[0].length; i++) {
+    //             console.log(this.sortFilms()[0][i].name);
+    //         };
+    //     } else if (keyWord == "hire") {
+    //         for (let i = 0; i < this.sortFilms()[1].length; i++) {
+    //             console.log(this.sortFilms()[1][i].name);
+    //         };
+    //     } else {
+    //         return false;
+    //     };
+    // },
+
     getStart: function (keyWord) {
         if (keyWord == "new") {
             for (let i = 0; i < this.sortFilms()[0].length; i++) {
@@ -149,23 +268,55 @@ const film = {
         return strGenre;
     },
 
+//создание map. Ключи - ряды, значения - массивы мест. return map.
+    getRows: function (){
+
+        // let rowsAndPlaces = [];
+        let rowsAndPlaces = [];
+        let map = new Map();
+
+        if (this.places.length == 0) {
+            return false;
+        };
+
+        //узнаем уникальные ряды
+        this.places.forEach(place => {
+            map.set(place.row, []);
+        });
+
+        //создаем map
+        for(let key of map.keys()) {
+            this.places.forEach(place => {
+                if (place.row == key){
+                    rowsAndPlaces.push(place); 
+                };
+            });
+            map.set(key, rowsAndPlaces);
+            rowsAndPlaces=[];
+        };
+        let sortedMap = new Map([...map.entries()].sort()); // http://qaru.site/questions/188901/is-it-possible-to-sort-a-es6-map-object
+        return sortedMap;
+    },
+
     renderFilmsInHire: function () {
         let table_body = document.getElementById('movie-list__body');
         let k = 0;          //формирование id ячеек таблицы
-        let filmName = '';  //название фильма
-        let strGenre = '';  //жанры
         let trClass = '';   //класс для цвета четных и нечетных строк
-        let linkFilm = '';  //ссылка ка кинопоиск
+        const rowsMap = this.getRows(); //map с местами для каждого ряда
+        //const rowsCount = rowsMap.size; //количество рядов 2
 
-        if (this.sortFilms()[1].length == 0){ //если массив с фильмами пуст
-            //добавить запись об отсутствии в прокате фильмов
+
+//если массив с фильмами пуст, добавить запись об отсутствии в прокате фильмов
+        if (this.sortFilms()[1].length == 0){
             table_body.insertAdjacentHTML('beforeend', '<tr class="movie-list__table-dark">\
-            <td colspan="4" class="movie-list__table-film-b">К сожалению, сейчас фильмов нет</td>\
+            <td colspan="4" class="movie-list__table-film-b">К сожалению, сейчас фильмов в прокате нет</td>\
             </tr>');
             return 0;
         }
+
         
         for (let i = 0; i < this.sortFilms()[1].length; i++) {
+            
             //определение четности строки
             if ((i+1)%2 != 0) {
                 trClass = 'movie-list__table-dark';
@@ -176,6 +327,14 @@ const film = {
             const filmStart = this.sortFilms()[1][i].start;
             const linkFilm = this.sortFilms()[1][i].link;
             const filmName = this.sortFilms()[1][i].name;
+            const filmImg = this.sortFilms()[1][i].image;
+            const links = this.sortFilms()[1][i].socialNetworks;
+            const linkFacebook = links[0];
+            const linkTwitter = links[1];
+            const linkBehance = links[2];
+            const linkDribbble = links[3];
+            const filmPrice = this.sortFilms()[1][i].price;
+
 
             let strGenre = this.getGenre(this.sortFilms()[1][i].genre);
 
@@ -184,8 +343,9 @@ const film = {
                 <td class="movie-list__table-film-b" id="name_film_${k}"><a title="Кинопоиск" href="${linkFilm}"\
                     target="_blank">${filmName}</a></td>\
                 <td class="movie-list__table-genre-b" id="genre_film_${k}">${strGenre}</td>\
+                <td class="movie-list__table-price-b" id="price_film_${k}">от ${filmPrice}</td>\
                 <td class="movie-list__table-plus">\
-                    <svg id="svg${k}"\
+                    <svg class="movie-list__plus-btn" id="buy_tickets_${k}"\
                     xmlns="http://www.w3.org/2000/svg"\
                     xmlns:xlink="http://www.w3.org/1999/xlink"\
                     width="33px" height="33px">\
@@ -194,30 +354,118 @@ const film = {
                     </svg>\
                 </td>\
             </tr>`);
+
+
+
+            // бронирование билета при клике на плюсик
+            let buy_ticket = document.getElementById(`buy_tickets_${k}`);
+            let container = document.getElementById("chooseFilmForm_container");
+            let chooseFilmForm = document.getElementById("chooseFilmForm");
+            let closeFilmForm = document.getElementById("closeFilmForm");
+            let chooseFilmForm__info = document.getElementById("chooseFilmForm__info");
+            let places = document.getElementById("places");
+
+            let rowHTML = ``;
+            let placeHTML = ``;
+            let temp = [];
+
+
+            buy_ticket.onclick = function (e) {
+
+                //на каждое кресло повесить on 'click'
+                //написать обработчики при нажатии/наведении/уводе мыши и т.п.
+
+
+                while (places.firstChild) {
+                    places.removeChild(places.firstChild);
+                };
+                for(let key of rowsMap.keys()) {
+                    // rowHTML = `<div class="placeRow placeRow${key}" id="placeRow${key}"></div>`;
+                    divRow = document.createElement("div");
+                    divRow.classList.add('placeRow');
+                    divRow.classList.add(`placeRow${key}`);
+                    divRow.id=`placeRow${key}`;
+                    // divRow.innerHTML = rowHTML;
+                    temp = rowsMap.get(key);
+                    for (let i = 0; i < temp.length; i++) {
+                        placeHTML = `${temp[i].number}`;
+                        divPlace = document.createElement("div");
+                        divPlace.classList.add(`place`);
+                        if(temp[i].booking){
+                            divPlace.classList.add(`place_taken`);
+                        } else {
+                            divPlace.classList.add(`place_free`);
+                        };
+                        divPlace.addEventListener('click', order.bind(film));
+                        divPlace.addEventListener('click', placeToggle.bind(film));
+                        divPlace.addEventListener('mouseover', placeHover);
+                        divPlace.addEventListener('mouseout', placeHoverOut);
+                        divPlace.addEventListener('contextmenu', placeContext.bind(film));
+                        divPlace.innerHTML = placeHTML;
+                        divRow.appendChild(divPlace);
+                    };
+                    places.appendChild(divRow);
+                };
+
+                container.style.display = 'block';
+                while (chooseFilmForm__info.firstChild) {
+                    chooseFilmForm__info.removeChild(chooseFilmForm__info.firstChild);
+                };
+                chooseFilmForm__info.insertAdjacentHTML('beforeend', `
+                <div class = "chooseFilmForm__infoImage">
+                    <img class="chooseFilmForm__image" src="${filmImg}" alt="${filmName}" title="${filmName}">
+                </div>
+                <div id="filmname">${filmName}</div>
+
+                <div style:"margin: 3px 0">
+                    <label for="chooseFilmForm__firstName">Ваше имя:</label>
+                    <input type="text" value="" placeholder="Апполинария" name="chooseFilmForm__firstName" id="chooseFilmForm__firstName" required>
+                </div>
+                <div style:"margin: 3px 0">
+                    <label for="chooseFilmForm__phone">Ваше номер телефона:</label>
+                    <input type="tel" value="" placeholder="phone number" name="chooseFilmForm__phone" id="chooseFilmForm__phone" required>
+                </div>
+                <div style:"margin: 3px 0">
+                    <label for="chooseFilmForm__place">Место</label>
+                    <input type="text" value="" name="chooseFilmForm__place" id="chooseFilmForm__place" required>
+                </div>
+                <div style:"margin: 3px 0">
+                    <label for="chooseFilmForm__price">Стоимость</label>
+                    <input type="text" value="" name="chooseFilmForm__price" id="chooseFilmForm__price" required>
+                </div>
+
+                               
+                `)
+                e.preventDefault();
+            };
+            closeFilmForm.onclick = function(){
+                container.style.display = 'none';
+            };
+            k += 1;
         };
     },
 
 
     renderNewFilms: function () {
         let movieGrid = document.getElementById('movie-grid');
-        let filmName = '';  //название фильма
-        let filmImg = '';   //ссылка на постер
-        let links = [];     //массив ссылок на соцсети
-        let linkFacebook = '';  //ссылка ка фэйсбук
-        let linkTwitter = '';  //ссылка на твиттер
-        let linkBehance = '';  //ссылка ка Behance
-        let linkDribbble = '';  //ссылка на Dribbble
+        // let filmName = '';  //название фильма
+        // let filmImg = '';   //ссылка на постер
+        // let links = [];     //массив ссылок на соцсети
+        // let linkFacebook = '';  //ссылка ка фэйсбук
+        // let linkTwitter = '';  //ссылка на твиттер
+        // let linkBehance = '';  //ссылка ка Behance
+        // let linkDribbble = '';  //ссылка на Dribbble
 
         
         for (let i = 0; i < this.sortFilms()[0].length; i++) {
 
-            filmImg = this.sortFilms()[0][i].image;
-            filmName = this.sortFilms()[0][i].name;
-            links = this.sortFilms()[0][i].socialNetworks;
-            linkFacebook = links[0];
-            linkTwitter = links[1];
-            linkBehance = links[2];
-            linkDribbble = links[3];
+            const filmImg = this.sortFilms()[0][i].image;
+            const filmName = this.sortFilms()[0][i].name;
+            const links = this.sortFilms()[0][i].socialNetworks;
+            const linkFacebook = links[0];
+            const linkTwitter = links[1];
+            const linkBehance = links[2];
+            const linkDribbble = links[3];
 
             movieGrid.insertAdjacentHTML('beforeend', `<div class="movie-grid__item">
             <div class="movie-grid__inner1">
@@ -339,7 +587,109 @@ const film = {
 };
 
 
-film.getName.bind(film)("new");
-film.getStart.bind(film)("new");
+// film.getName.bind(film)("new");
+// film.getStart.bind(film)("new");
 film.renderFilmsInHire.bind(film)();
 film.renderNewFilms.bind(film)();
+// film.getRows.bind(film)();
+
+// обработка клика на квадрате с местом, заполнение элементов input формы
+let order = function(e) {
+    let chooseFilmForm__place = document.getElementById("chooseFilmForm__place");
+    let chooseFilmForm__price = document.getElementById("chooseFilmForm__price");
+    let el = e.target;
+
+    if (el.classList.contains('place_free')) {
+        let filmname = document.getElementById("filmname");
+        let priceFilm = 0;
+        let pricePlace = 0;
+        let price = 0;
+        let placeNum = el.innerHTML;
+        chooseFilmForm__place.value = placeNum;
+        this.films.forEach(film => {
+            if (film.name==filmname.innerHTML){
+                priceFilm = film.price;
+            };
+        });
+        this.places.forEach(place => {
+            if (place.number==placeNum){
+                pricePlace=place.price;
+            };
+        });
+        price = priceFilm * pricePlace;
+        chooseFilmForm__price.value = price;
+    } else if (el.classList.contains('place_chosen')) {
+        chooseFilmForm__place.value = '';
+        chooseFilmForm__price.value = '';
+    } else {
+        chooseFilmForm__place.value = '';
+        chooseFilmForm__price.value = '';
+    }
+};
+// обработка клика на квадрате с местом, смена цвета
+let placeToggle = function(e) {
+    let el = e.target;
+    // el.classList.toggle('place_chosen');
+
+    if (el.classList.contains('place_free')) {
+        el.classList.remove('place_free');
+        el.classList.add('place_chosen');
+
+    } else if (el.classList.contains('place_chosen')) {
+        el.classList.remove('place_chosen');
+        el.classList.add('place_free');
+    }
+};
+
+// обрабтка правого клика на квадате с местом
+let placeContext = function(e){
+    let el = e.target;
+    let filmname = document.getElementById("filmname");
+    let priceFilm = 0;
+    let pricePlace = 0;
+    let price = 0;
+    let placeNum = el.innerHTML;
+    chooseFilmForm__place.value = placeNum;
+    this.films.forEach(film => {
+        if (film.name==filmname.innerHTML){
+            priceFilm = film.price;
+        };
+    });
+    this.places.forEach(place => {
+        if (place.number==placeNum){
+            pricePlace=place.price;
+        };
+    });
+    price = priceFilm * pricePlace;
+    alert(price);
+};
+// обработка события перемещения курсора мыши над элементом
+let placeHover = function(){
+    this.style.background = '#4b4d4f';
+};
+// обработка события перемещения курсора мыши за пределы элемента
+let placeHoverOut = function(){
+    if(this.classList.contains('place_free')){
+        this.style.background = '#a3cc40';
+    } else if (this.classList.contains('place_taken') || this.classList.contains('place_chosen')) {
+        this.style.background = '#ffa500';
+    }
+};
+
+
+
+
+
+// let filmHTML = `<div class="block05__movie1"></div>`;
+
+// filmRowHTML = film.renderFilmRow.bind(currentFilm)(), /////////return filmHTML
+
+// tr = document.createElement("tr"); //содаем DOM элемент TR;
+
+// tr.innerHTML = filmRowHTML; //записываем в DOM элемент HTML разметку
+
+// tr.onclick = function () {};
+// tableDOM.appendChild(tr); //добавляем в DOM элемент таблицы DOM элемент строки с фильмом
+
+// let orderClinetName = document.getElementById('orderClinetName');
+// orderClinetName.style.border = '1px solid #bebebe';

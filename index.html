@@ -192,6 +192,7 @@
                             <th class="movie-list__table-time-h"><a href="#begin"><div>Начало <br /> сеанса</div><span class="triangle-up"></span></a></th>
                             <th class="movie-list__table-film-h"><a href="#name"><div>Название фильма</div><span class="triangle-down"></span></a></th>
                             <th class="movie-list__table-genre-h"><a href="#genre">Жанр</a></th>
+                            <th class="movie-list__table-price-h"><a href="#price">Цена</a></th>
                             <th class="movie-list__table-plus"></th>
                         </tr>
                     </thead>
@@ -974,7 +975,31 @@
                 <button class="form__btn" type="submit" id="send_gift2">Заказать</button>
             </div>
         </div>
-</div>
+    </div>
+
+
+
+    <div id="chooseFilmForm_container">
+        <div class="form3" id="chooseFilmForm" method="POST" action="order.php" name="form" enctype="multipart/form-data">
+            <button id="closeFilmForm">X</button>
+            <div class="chooseFilmForm__info" id="chooseFilmForm__info">
+
+            </div>
+            <div class="places" id="places">
+                <!-- <div class="place place_free">1</div>
+                <div class="place place_taken">2</div>
+                <div class="place place_free">3</div>
+                <div class="place place_free">4</div>
+                <div class="place place_free">5</div>
+                <div class="place place_free">6</div>
+                <div class="place place_free">7</div>
+                <div class="place place_free">8</div>
+                <div class="place place_free">9</div> -->
+            </div>
+        </div>
+    </div>
+
+
 
 
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -985,7 +1010,7 @@
         $(".owl-carousel").owlCarousel();
         });
     </script>
-    <script type="text/babel" src="js/films.js"></script>
+    <script type="text/javascript" src="js/films.js"></script>
     <!-- <script src="js/films_4.8.js"></script> -->
     <!-- <script src="js/test.js"></script> -->
     <!-- <script src="js/films.js"></script> -->

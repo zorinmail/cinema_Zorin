@@ -416,7 +416,17 @@ html {
     padding-top: 0.5rem;
     /*padding-top: 10px;*/
 }
-
+.movie-list__table-price-h {
+    text-align: center;
+    width: 4rem;
+    vertical-align: middle;
+}
+.movie-list__table-price-b {
+    text-align: center;
+    vertical-align: top;
+    padding-top: 0.5rem;
+    /*padding-top: 10px;*/
+}
 /*столбец с плюсиками.
 Выравнивать все плюсики до макета не стал,
 потому что там они все разные, 
@@ -427,6 +437,9 @@ html {
     vertical-align: middle;
     padding-top: 0.35rem;
     padding-right: 0.25rem;
+}
+.movie-list__plus-btn:hover path{
+    fill: green;
 }
 /*тёмные строки*/
 .movie-list__table-dark {
@@ -792,6 +805,9 @@ a div {
     top: 1rem;
 }
 
+
+
+
 #orderForm {
     position: fixed;
     width: 100%;
@@ -816,6 +832,85 @@ a div {
     position: absolute;
     right: 1rem;
     top: 1rem;
+}
+/* tr:hover td {
+    color: green;
+} */
+
+
+
+
+
+
+
+
+
+#chooseFilmForm_container {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 1000;
+}
+#chooseFilmForm_container .form3 {
+    width: 30rem;
+    background-color: white;
+    margin: auto;
+    padding: 2rem;
+    margin: auto;
+    margin-top: 1rem;
+    opacity: 1;
+    position: relative;
+}
+
+#closeFilmForm{
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    background: rgba(200, 200, 200, 0);
+    border: 0px;
+}
+.chooseFilmForm__infoImage{
+    text-align: center;
+}
+.places{
+    /* display: grid; */
+    width: 80%;
+    /* grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(1.5rem, 1fr));
+    grid-gap: 1vw; */
+}
+.placeRow{
+    display: flex;
+    justify-content: center;
+}
+.place{
+    text-align: center;
+    vertical-align: middle;
+    background: gray;
+    /* display: inline-block; */
+    margin: 0.1rem;
+    padding: 0.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid black;
+}
+.place:hover{
+    /* background: #4b4d4f; */
+    cursor: pointer;
+}
+.place_free{
+    background: #a3cc40;
+}
+.place_taken{
+    background: #ffa500;
+}
+.place_chosen{
+    background: #ffa500;
+    border: 1px solid red;
 }
 /* tr:hover td {
     color: green;
