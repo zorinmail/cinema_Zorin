@@ -356,7 +356,6 @@ const film = {
                 };
                 chooseFilmForm.appendChild(placesContainer);
 
-
                 for(let key of rowsMap.keys()) {
                     divRow = document.createElement("div");
                     divRow.classList.add('placeRow');
@@ -373,11 +372,12 @@ const film = {
                             divPlace.classList.add(`place_free`);
                         };
 
-                        divPlace.addEventListener('click', ()=>{
-                            order.bind(film)(temp, event);
-                        });
+                        // divPlace.addEventListener('click', ()=>{
+                        //     order.bind(film)(temp, event);
+                        // });
 
                         divPlace.addEventListener('click', placeToggle.bind(film));
+
                         divPlace.addEventListener('mouseover', placeHover);
                         divPlace.addEventListener('mouseout', placeHoverOut);
 
@@ -445,44 +445,46 @@ film.renderNewFilms.bind(film)();
 // film.getRows.bind(film)();
 
 // обработка клика на квадрате с местом, заполнение элементов input формы
-let order = function(temp, event) {
-    let chooseFilmForm__place = document.getElementById("chooseFilmForm__place");
-    let chooseFilmForm__price = document.getElementById("chooseFilmForm__price");
-    let el = event.target;
+// let order = function(temp, event) {
+//     let chooseFilmForm__place = document.getElementById("chooseFilmForm__place");
+//     let chooseFilmForm__price = document.getElementById("chooseFilmForm__price");
+//     let el = event.target;
 
-    if (el.classList.contains('place_free')) {
-        let filmname = document.getElementById("filmname").innerHTML;
-        let placeNum = el.innerHTML;
-        chooseFilmForm__place.value = placeNum;
-        chooseFilmForm__price.value = this.getPrice(filmname, placeNum, temp)['priceFilm'] * this.getPrice(filmname, placeNum, temp)['pricePlace'];
-    } else if (el.classList.contains('place_chosen')) {
-        chooseFilmForm__place.value = '';
-        chooseFilmForm__price.value = '';
-    } else {
-        chooseFilmForm__place.value = '';
-        chooseFilmForm__price.value = '';
-    };
-};
+//     if (el.classList.contains('place_free')) {
+//         let filmname = document.getElementById("filmname").innerHTML;
+//         let placeNum = el.innerHTML;
+//         chooseFilmForm__place.value = placeNum;
+//         chooseFilmForm__price.value = this.getPrice(filmname, placeNum, temp)['priceFilm'] * this.getPrice(filmname, placeNum, temp)['pricePlace'];
+//     } else if (el.classList.contains('place_chosen')) {
+//         chooseFilmForm__place.value = '';
+//         chooseFilmForm__price.value = '';
+//     } else {
+//         chooseFilmForm__place.value = '';
+//         chooseFilmForm__price.value = '';
+//     };
+// };
 
 //обработчик на всплывающие события
 let orderBubble = function(temp, event) {
 
-    // let chooseFilmForm__place = document.getElementById("chooseFilmForm__place");
-    // let chooseFilmForm__price = document.getElementById("chooseFilmForm__price");
     let el = event.target;
-    console.log(el);
-    // if (el.classList.contains('place_free')) {
-    //     let filmname = document.getElementById("filmname").innerHTML;
-    //     let placeNum = el.innerHTML;
-    //     chooseFilmForm__place.value = placeNum;
-    //     chooseFilmForm__price.value = this.getPrice(filmname, placeNum, temp)['priceFilm'] * this.getPrice(filmname, placeNum, temp)['pricePlace'];
-    // } else if (el.classList.contains('place_chosen')) {
-    //     chooseFilmForm__place.value = '';
-    //     chooseFilmForm__price.value = '';
-    // } else {
-    //     chooseFilmForm__place.value = '';
-    //     chooseFilmForm__price.value = '';
-    // };
+    if (el.classList.contains('place')){
+        let chooseFilmForm__place = document.getElementById("chooseFilmForm__place");
+        let chooseFilmForm__price = document.getElementById("chooseFilmForm__price");
+        if (el.classList.contains('place_chosen')) {
+            let filmname = document.getElementById("filmname").innerHTML;
+            let placeNum = el.innerHTML;
+            chooseFilmForm__place.value = placeNum;
+            chooseFilmForm__price.value = this.getPrice(filmname, placeNum, temp)['priceFilm'] * this.getPrice(filmname, placeNum, temp)['pricePlace'];
+        } else if (el.classList.contains('place_free')) {
+            chooseFilmForm__place.value = '';
+            chooseFilmForm__price.value = '';
+        } else {
+            chooseFilmForm__place.value = '';
+            chooseFilmForm__price.value = '';
+        };
+    };
+    event.stopPropagation();
 };
 
 
