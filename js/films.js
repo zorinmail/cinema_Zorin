@@ -297,6 +297,7 @@ const film = {
             td[0].textContent = filmStart;
             td[0].id = `start_film_${k}`;
             a.textContent = filmName;
+            a.href = linkFilm;
             td[1].id = `name_film_${k}`;
             td[2].textContent = strGenre;
             td[2].id = `genre_film_${k}`;
@@ -376,7 +377,9 @@ const film = {
                         //     order.bind(film)(temp, event);
                         // });
 
-                        divPlace.addEventListener('click', placeToggle.bind(film));
+                        // divPlace.addEventListener('click', placeToggle.bind(film));
+
+                        $(divPlace).on('after_orderBubble', placeToggle.bind(film));
 
                         divPlace.addEventListener('mouseover', placeHover);
                         divPlace.addEventListener('mouseout', placeHoverOut);
@@ -471,12 +474,12 @@ let orderBubble = function(temp, event) {
     if (el.classList.contains('place')){
         let chooseFilmForm__place = document.getElementById("chooseFilmForm__place");
         let chooseFilmForm__price = document.getElementById("chooseFilmForm__price");
-        if (el.classList.contains('place_chosen')) {
+        if (el.classList.contains('place_free')) {
             let filmname = document.getElementById("filmname").innerHTML;
             let placeNum = el.innerHTML;
             chooseFilmForm__place.value = placeNum;
             chooseFilmForm__price.value = this.getPrice(filmname, placeNum, temp)['priceFilm'] * this.getPrice(filmname, placeNum, temp)['pricePlace'];
-        } else if (el.classList.contains('place_free')) {
+        } else if (el.classList.contains('place_chosen')) {
             chooseFilmForm__place.value = '';
             chooseFilmForm__price.value = '';
         } else {
@@ -484,7 +487,8 @@ let orderBubble = function(temp, event) {
             chooseFilmForm__price.value = '';
         };
     };
-    event.stopPropagation();
+    $(el).trigger('after_orderBubble');
+    // event.stopPropagation();
 };
 
 
@@ -535,12 +539,7 @@ let placeHoverOut = function(){
 };
 
 
-//почему-то без setTimeout не работает. Как будто не подгружаются templates
-setTimeout(() => {
-    $(document).ready(globalFunction());
-}, 0);
-
-
+$(document).ready(globalFunction);
 
    //массив мест
     // const places = [
