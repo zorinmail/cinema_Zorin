@@ -9,20 +9,67 @@
     <title>My cinema</title>
     <link rel="icon" type="image/png" href="images/favicon2.png" />
     <!-- <link rel="stylesheet" type="text/css" href="build/style.css" /> -->
+    
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.css">
+
+    
+    
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/owl.theme.default.css">
     <link rel="stylesheet" href="css/reset.css"/>
     <link rel="stylesheet" href="css/main.css"/>
     <link rel="stylesheet" href="css/media.css"/>
 
-
     <script src="js/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="js/films.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
 
     <!--<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">-->
 </head>
 
 <body>
+
+
+
+    <!-- Button trigger modal
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+        Launch demo modal
+    </button> -->
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Выберите свой город</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="city_choose" class="col-form-label"></label>
+                    <input name="city_choose" type="text" class="form-control" id="city_choose" placeholder="введите название города">
+                </div>
+                <div id="search_result">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+              <button id="city_save" type="button" class="btn btn-success" data-dismiss="modal">Сохранить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
     <div class="container-top">
         <header class="block-top">
             <nav class="nav">
@@ -45,6 +92,10 @@
                         </li>
                         <li class="menu__item">
                             <a class="nav__link" title="Контакты" href="#">Contact</a>
+                        </li>
+                        <li class="menu__item">
+                            <p class="menu__city">Ваш город:</p>
+                            <a class="nav__link" title="выбрать город" href="#" id="city_name" data-toggle="modal" data-target="#exampleModalCenter">Не определено</a>
                         </li>
                     </ul>
                 </div>
@@ -747,8 +798,6 @@
 
 
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/owl.carousel.js"></script>
     <script>
         $(document).ready(function(){
         $(".owl-carousel").owlCarousel();
@@ -758,10 +807,12 @@
 
     <!-- <script type="text/javascript" src="js/films.js"></script> -->
 
-
+    <script type="text/javascript" src="js/films.js"></script>
+    <!-- <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.default.css"> -->
     <!-- <script src="js/films_4.8.js"></script> -->
     <!-- <script src="js/test.js"></script> -->
-    <!-- <script src="js/films.js"></script> -->
+    <script src="js/ajax.js"></script>
     <script src="js/get_gift.js"></script>
     <!-- <script src="js/films_4.4.js"></script> -->
 </body>

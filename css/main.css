@@ -162,23 +162,29 @@ html {
     font-size: 0.75rem;
     font-weight: 100;
     vertical-align: middle;
+    border: 1px solid transparent;
 }
 .nav__link:hover {
     color: #90d23d;
-
+    /* border-bottom: 1px solid #90d23d; */
 }
 .menu{
     list-style: none;
 }
+.menu__city{
+    display: inline-block;
+    margin: 0 0 0 1.905rem;
+    color: white;
+    font-size: 0.75rem;
+}
 .menu__item {
     display: inline-block;
     margin: 0 0 0 1.905rem;
-    border: 1px solid transparent;
+    
 }
-.menu__item:hover {
-    border-bottom: 1px solid #90d23d;
-    /*padding-top: 1px; */
-}
+/* .menu__item:hover {  
+    padding-top: 1px;
+} */
 .menu li:first-child {
     margin: 0;
 }
@@ -211,6 +217,13 @@ html {
     border-bottom: 0px solid #fff;
     position: absolute;
     bottom: 0vh;
+}
+.finded_cities_li{
+    margin: .5rem 0;
+}
+.finded_cities_li:hover{
+    cursor: pointer;
+    color: #90d23d;
 }
 /* в макете пока нет
 .menu_nav_li_city {

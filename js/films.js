@@ -373,15 +373,19 @@ const film = {
                             divPlace.classList.add(`place_free`);
                         };
 
-                        // divPlace.addEventListener('click', ()=>{
-                        //     order.bind(film)(temp, event);
-                        // });
+                        divPlace.addEventListener('click', ()=>{
+                            order.bind(film)(temp, event);
+                        });
 
-                        // divPlace.addEventListener('click', placeToggle.bind(film));
+                        divPlace.addEventListener('click', placeToggle.bind(film));
 
-                        $(divPlace).on('after_orderBubble', placeToggle.bind(film));
+                        $(divPlace).on('after_order', placeToggle.bind(film));
 
                         divPlace.addEventListener('mouseover', placeHover);
+
+                        
+                        // $(divPlace).on('after_toggle', placeHoverOut);
+
                         divPlace.addEventListener('mouseout', placeHoverOut);
 
                         
@@ -394,9 +398,9 @@ const film = {
                     };
                     placesContainer.appendChild(divRow);
                 };
-                container.addEventListener('click', ()=>{
-                    orderBubble.bind(film)(temp, event);
-                });
+                // container.addEventListener('click', ()=>{
+                //     orderBubble.bind(film)(temp, event);
+                // });
             };
             closeFilmForm.onclick = function(){
                 chooseFilmForm.removeChild(chooseFilmForm.lastChild);
@@ -448,63 +452,63 @@ film.renderNewFilms.bind(film)();
 // film.getRows.bind(film)();
 
 // обработка клика на квадрате с местом, заполнение элементов input формы
-// let order = function(temp, event) {
-//     let chooseFilmForm__place = document.getElementById("chooseFilmForm__place");
-//     let chooseFilmForm__price = document.getElementById("chooseFilmForm__price");
-//     let el = event.target;
+let order = function(temp, event) {
+    let chooseFilmForm__place = document.getElementById("chooseFilmForm__place");
+    let chooseFilmForm__price = document.getElementById("chooseFilmForm__price");
+    let el = event.target;
 
-//     if (el.classList.contains('place_free')) {
-//         let filmname = document.getElementById("filmname").innerHTML;
-//         let placeNum = el.innerHTML;
-//         chooseFilmForm__place.value = placeNum;
-//         chooseFilmForm__price.value = this.getPrice(filmname, placeNum, temp)['priceFilm'] * this.getPrice(filmname, placeNum, temp)['pricePlace'];
-//     } else if (el.classList.contains('place_chosen')) {
-//         chooseFilmForm__place.value = '';
-//         chooseFilmForm__price.value = '';
-//     } else {
-//         chooseFilmForm__place.value = '';
-//         chooseFilmForm__price.value = '';
-//     };
-// };
+    if (el.classList.contains('place_free')) {
+        let filmname = document.getElementById("filmname").innerHTML;
+        let placeNum = el.innerHTML;
+        chooseFilmForm__place.value = placeNum;
+        chooseFilmForm__price.value = this.getPrice(filmname, placeNum, temp)['priceFilm'] * this.getPrice(filmname, placeNum, temp)['pricePlace'];
+    } else if (el.classList.contains('place_chosen')) {
+        chooseFilmForm__place.value = '';
+        chooseFilmForm__price.value = '';
+    } else {
+        chooseFilmForm__place.value = '';
+        chooseFilmForm__price.value = '';
+    };
+    $(el).trigger('after_order');
+};
 
 //обработчик на всплывающие события
-let orderBubble = function(temp, event) {
+// let orderBubble = function(temp, event) {
 
-    let el = event.target;
-    if (el.classList.contains('place')){
-        let chooseFilmForm__place = document.getElementById("chooseFilmForm__place");
-        let chooseFilmForm__price = document.getElementById("chooseFilmForm__price");
-        if (el.classList.contains('place_free')) {
-            let filmname = document.getElementById("filmname").innerHTML;
-            let placeNum = el.innerHTML;
-            chooseFilmForm__place.value = placeNum;
-            chooseFilmForm__price.value = this.getPrice(filmname, placeNum, temp)['priceFilm'] * this.getPrice(filmname, placeNum, temp)['pricePlace'];
-        } else if (el.classList.contains('place_chosen')) {
-            chooseFilmForm__place.value = '';
-            chooseFilmForm__price.value = '';
-        } else {
-            chooseFilmForm__place.value = '';
-            chooseFilmForm__price.value = '';
-        };
-    };
-    $(el).trigger('after_orderBubble');
-    // event.stopPropagation();
-};
+//     let el = event.target;
+//     if (el.classList.contains('place')){
+//         let chooseFilmForm__place = document.getElementById("chooseFilmForm__place");
+//         let chooseFilmForm__price = document.getElementById("chooseFilmForm__price");
+//         if (el.classList.contains('place_free')) {
+//             let filmname = document.getElementById("filmname").innerHTML;
+//             let placeNum = el.innerHTML;
+//             chooseFilmForm__place.value = placeNum;
+//             chooseFilmForm__price.value = this.getPrice(filmname, placeNum, temp)['priceFilm'] * this.getPrice(filmname, placeNum, temp)['pricePlace'];
+//         } else if (el.classList.contains('place_chosen')) {
+//             chooseFilmForm__place.value = '';
+//             chooseFilmForm__price.value = '';
+//         } else {
+//             chooseFilmForm__place.value = '';
+//             chooseFilmForm__price.value = '';
+//         };
+//     };
+//     $(el).trigger('after_orderBubble');
+//     // event.stopPropagation();
+// };
 
 
 // обработка клика на квадрате с местом, смена цвета
 let placeToggle = function(e) {
     let el = e.target;
     // el.classList.toggle('place_chosen');
-
     if (el.classList.contains('place_free')) {
         el.classList.remove('place_free');
         el.classList.add('place_chosen');
-
     } else if (el.classList.contains('place_chosen')) {
         el.classList.remove('place_chosen');
         el.classList.add('place_free');
-    }
+    };
+    $(el).trigger('after_toggle');
 };
 
 // обрабтка правого клика на квадате с местом
