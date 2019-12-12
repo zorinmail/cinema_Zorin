@@ -3,17 +3,21 @@ const SYPEX_URL = 'https://api.sypexgeo.net/json/',
 
 
 let cities;
+
+
+
 /**
  * 
  * @param {*} api_url - адрес запроса
  */
 
+ 
 
  //при загрузке страницы обновляем город в шапке сайта
 jQuery(document).ready(($) => {
     $.getJSON( SYPEX_URL, function( data ) {
         let city = data['city']['name_ru'];
-        console.log(city);
+        // console.log(city);
         $('#city_name').html(city);
     });
 });
@@ -44,6 +48,7 @@ jQuery(document).ready(($) => {
 //         $('#city_name').html(city);
 //     });       
 // });
+
 
 
 //логика для модального окна выбора города

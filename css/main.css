@@ -889,6 +889,23 @@ a div {
 .chooseFilmForm__infoImage{
     text-align: center;
 }
+.chooseFilmForm__name{
+    margin: 10px 0;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.chooseFilmForm__inputs {
+    margin: 10px 0;
+    width: 60%;
+    border-radius: 2%;
+}
+.chooseFilmForm__input-name{
+    width: 100%;
+}
+.chooseFilmForm__input-phone{
+    width: 100%;
+}
 .places{
     /* display: grid; */
     width: 80%;
@@ -902,15 +919,24 @@ a div {
 }
 .place{
     text-align: center;
-    vertical-align: middle;
+    line-height: 30px;
     background: gray;
-    /* display: inline-block; */
-    margin: 0.1rem;
-    padding: 0.5rem;
-    width: 1.5rem;
-    height: 1.5rem;
+    margin: 0.15rem;
+    width: 5rem;
+    /* height: 30px; */
     border: 1px solid black;
+    border-radius: 20%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
+.place:before{
+    content: "";
+    padding-top: 100%;
+    float: left; 
+}
+
+
+
 .place:hover{
     /* background: #4b4d4f; */
     cursor: pointer;
@@ -923,7 +949,7 @@ a div {
 }
 .place_chosen{
     background: #ffa500;
-    border: 1px solid red;
+    border: 1px solid firebrick;
 }
 /* tr:hover td {
     color: green;

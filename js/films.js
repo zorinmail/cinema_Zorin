@@ -1,7 +1,4 @@
 
-let globalFunction = function(){
-
-    //информация о фильмах
     const films = [
         {
             start: '10:00',
@@ -12,7 +9,7 @@ let globalFunction = function(){
             filmNew: true,
             image: 'images/spyder-man.png',
             socialNetworks: ['https://www.facebook.com', 'https://twitter.com/', 'https://www.behance.net', 'https://dribbble.com'],
-            price: 350,
+            price: 1350,
         },
         {
             start: '12:00',
@@ -34,7 +31,7 @@ let globalFunction = function(){
             filmNew: false,
             image: 'images/toy_story_4.png',
             socialNetworks: ['https://www.facebook.com', 'https://twitter.com/', 'https://www.behance.net', 'https://dribbble.com'],
-            price: 250,
+            price: 1250,
         },
         {
             start: '16:00',
@@ -53,7 +50,7 @@ let globalFunction = function(){
             link: 'https://www.kinopoisk.ru/film/829407/',
             genre: [5, 4, 2, 1],
             filmHire: true,
-            filmNew: true,
+            filmNew: false,
             image: 'images/lego_2.png',
             socialNetworks: ['https://www.facebook.com', 'https://twitter.com/', 'https://www.behance.net', 'https://dribbble.com'],
             price: 300,
@@ -64,7 +61,7 @@ let globalFunction = function(){
             link: 'https://www.kinopoisk.ru/film/dobro-pozhalovat-v-zombilend-2-2019-489414/',
             genre: [7, 1, 4],
             filmHire: true,
-            filmNew: true,
+            filmNew: false,
             image: 'images/Zомбилэнд.png',
             socialNetworks: ['https://www.facebook.com', 'https://twitter.com/', 'https://www.behance.net', 'https://dribbble.com'],
             price: 350,
@@ -75,7 +72,7 @@ let globalFunction = function(){
             link: 'https://www.kinopoisk.ru/film/1991/',
             genre: [3, 8],
             filmHire: false,
-            filmNew: false,
+            filmNew: true,
             image: 'images/ghost.png',
             socialNetworks: ['https://www.facebook.com', 'https://twitter.com/', 'https://www.behance.net', 'https://dribbble.com'],
             price: 250,
@@ -96,14 +93,18 @@ let globalFunction = function(){
     ];
 
 
+class Film {
+    sortedFilms
 
-const film = {
+    constructor(){
+        this.setSortedFilms();
+    }
 
-    sortFilms: function(){
+    //сортировка фильмов на прокат, новинки, остальные
+    setSortedFilms () { 
         let newFilms = [],
             filmsInHire = [],
             nowhereFilms = [];
-
         films.forEach(film => {
             if (film.filmHire){
                 filmsInHire.push(film);
@@ -115,66 +116,94 @@ const film = {
                 nowhereFilms.push(film);
             };
         });
-        let allFilms = {
+        this.sortedFilms = {
             newFilms,
             filmsInHire,
             nowhereFilms,
         };
-        return allFilms;
-    },
+        //в сортированных фильмах замена жанров с чисел на строки
+        this.setGenresInSortedFilms();
+    }
+    
+    //замена жанров с чисел на строки
+    setGenresInSortedFilms () {
+        let stringGenres = '';  
 
-    getName: function (keyWord) {
-        let sortedFilms = this.sortFilms();
+        for (let key in this.sortedFilms){
+            let someo = this.sortedFilms[key].length;
+            // debugger
+
+            for (let j = 0; j < this.sortedFilms[key].length; j++){
+                let arrayOfWords = [];
+                let some = this.sortedFilms[key][j].genre.length;
+                // debugger
+
+                for (let k = 0; k < this.sortedFilms[key][j].genre.length; k++) {
+                    arrayOfWords.push(genres[this.sortedFilms[key][j].genre[k]]);
+                    // debugger;
+                };
+                // debugger;
+                stringGenres = arrayOfWords.join(', ');
+                this.sortedFilms[key][j].genre = stringGenres;
+                // return stringGenres;
+            }
+        };
+    }
+
+    getSortedFilms(){
+        return this.sortedFilms;
+    }
+
+    //получение имен фильмов по ключевому слову
+    getName (keyWord) {
+        // let sortedFilms = this.sortFilms();
+        if(!this.sortedFilms){
+            return false;
+        }
         if (keyWord == "new") {
-            for (let i = 0; i < sortedFilms['newFilms'].length; i++) {
+            for (let i = 0; i < this.sortedFilms['newFilms'].length; i++) {
                 console.log(sortedFilms['newFilms'][i].name);
             };
         } else if (keyWord == "hire") {
-            for (let i = 0; i < sortedFilms['filmsInHire'].length; i++) {
+            for (let i = 0; i < thissortedFilms['filmsInHire'].length; i++) {
                 console.log(sortedFilms['filmsInHire'][i].name);
             };
         } else {
-            return false;
+            return false; //?такое в методе класса указывается?
         };
-    },
+    }
 
-    getStart: function (keyWord) {
-        let sortedFilms = this.sortFilms();
+    //получение начал фильмов по ключевому слову
+    getStart (keyWord) {
+        // let sortedFilms = this.sortFilms();
+        if(!this.sortedFilms){
+            return false;
+        }
         if (keyWord == "new") {
-            for (let i = 0; i < sortedFilms['newFilms'].length; i++) {
+            for (let i = 0; i < this.sortedFilms['newFilms'].length; i++) {
                 console.log(sortedFilms['newFilms'][i].start);
             };
         } else if (keyWord == "hire") {
-            for (let i = 0; i < sortedFilms['filmsInHire'].length; i++) {
+            for (let i = 0; i < this.sortedFilms['filmsInHire'].length; i++) {
                 console.log(sortedFilms['filmsInHire'][i].start);
             };
         } else {
             return false;
         };
-    },
+    }
 
-    getGenre: function (arrayOfNumbers) {
-        let arrayOfWords = [];
-        for (let i = 0; i < arrayOfNumbers.length; i++) {
-            arrayOfWords.push(genres[arrayOfNumbers[i]]);
-        };
-        let strGenre = arrayOfWords.join(', ');
-        // console.log(strGenre);
-        return strGenre;
-    },
-
-    getPrice: function (filmname, placeNum, placesInRow) {
+    getPrice (filmname, placeNum, placesInRow) {
         let priceFilm = 0,
             pricePlace = 0;
 
-        films.forEach(film => {
-            if (film.name==filmname){
+        this.sortedFilms["filmsInHire"].forEach(film => {
+            if (film.name == filmname){
                 priceFilm = film.price;
             };
         });
         placesInRow.forEach(place => {
-            if (place.number==placeNum){
-                pricePlace=place.price;
+            if (place.number == placeNum){
+                pricePlace = place.price;
             };
         });
         let prices = {
@@ -182,78 +211,13 @@ const film = {
             pricePlace,
         }
         return prices;
-    },
+    }
 
-    createPlaces: function (numOfPlaces) {
-        let places = [];
-        for (let i = 0; i <= numOfPlaces-1; i++) {
-            let number = i+1;
-            let price = 0;
-            let booking = true;
-            let row = 1; //ряд всегда 1
-
-//определение брони места
-            if (Math.random() > 0.5) {
-                booking = true;
-            } else {
-                booking = false;
-            };
-
-//определение цены
-            if (i <= 2 || i > (numOfPlaces - 4)) {
-                price = 1;
-            } else {
-                price = 1.5;
-            };
-
-
-            let place = {
-                number,
-                price,
-                booking,
-                row,
-            };
-            // console.log(places);
-            places.push(place);
-        };
-        return places;
-    },
-
-    //создание map. Ключи - ряды, значения - массивы мест. return map.
-    getRows: function (){
-        let places = this.createPlaces(10);
-        let rowsAndPlaces = [],
-            map = new Map();
-
-        if (places.length == 0) {
-            return false;
-        };
-
-        //узнаем уникальные ряды
-        places.forEach(place => {
-            map.set(place.row, []);
-        });
-
-        //создаем map
-        for(let key of map.keys()) {
-            places.forEach(place => {
-                if (place.row == key){
-                    rowsAndPlaces.push(place); 
-                };
-            });
-            map.set(key, rowsAndPlaces);
-            rowsAndPlaces=[];
-        };
-        let sortedMap = new Map([...map.entries()].sort()); // http://qaru.site/questions/188901/is-it-possible-to-sort-a-es6-map-object
-        return sortedMap;
-    },
-
-    renderFilmsInHire: function () {
-        let table_body = document.getElementById('movie-list__body'),
+    renderFilmsInHire(idWhereToInsert, rowsMap){
+        let table_body = document.getElementById(idWhereToInsert),
             k = 0,          //формирование id ячеек таблицы
             trClass = '',   //класс для цвета четных и нечетных строк
-            rowsMap = this.getRows(), //map с местами для каждого ряда
-            sortedFilms = this.sortFilms();
+            sortedFilms = this.sortedFilms;
 
         //если массив с фильмами пуст
         if (sortedFilms['filmsInHire'].length == 0){
@@ -277,13 +241,8 @@ const film = {
                 linkFilm = sortedFilms['filmsInHire'][i].link,
                 filmName = sortedFilms['filmsInHire'][i].name,
                 filmImg = sortedFilms['filmsInHire'][i].image,
-                links = sortedFilms['filmsInHire'][i].socialNetworks,
-                linkFacebook = links[0],
-                linkTwitter = links[1],
-                linkBehance = links[2],
-                linkDribbble = links[3],
                 filmPrice = sortedFilms['filmsInHire'][i].price,
-                strGenre = this.getGenre(sortedFilms['filmsInHire'][i].genre),
+                strGenre = sortedFilms['filmsInHire'][i].genre,
                 tmpl = document.querySelector('#tableRow'),
                 tr = tmpl.content.querySelector('tr'),
                 td = tmpl.content.querySelectorAll('td'),
@@ -324,26 +283,27 @@ const film = {
                 placesContainer.classList.add('places');
                 placesContainer.id = 'places';
                 
-
-
             let placeHTML = ``,
-                temp = []; //массив для мест в ряду. Для ряда свой temp
+                tempRow = []; //массив для мест в ряду. Для ряда свой tempRow
 
             let chooseFilmForm__template = document.querySelector('#chooseFilmForm__template');
 
+//для вызова обработчиков
+            let that = this;
 
-
+//обработка клика по плюсикам в таблице
             buy_ticket.onclick = function () {
                 
                 let divs = chooseFilmForm__template.content.querySelectorAll('div');
                 let img = chooseFilmForm__template.content.querySelector('img');
+
                 img.src = filmImg;
                 img.alt = filmName;
                 img.title = filmName;
                 divs[1].textContent = filmName;
 
                 container.style.display = 'block';
-
+                // document.body.style.overflow = 'hidden';
 
                 while (chooseFilmForm__info.firstChild) {
                     chooseFilmForm__info.removeChild(chooseFilmForm__info.firstChild);
@@ -357,62 +317,56 @@ const film = {
                 };
                 chooseFilmForm.appendChild(placesContainer);
 
+                //цикл для перебора рядов.
                 for(let key of rowsMap.keys()) {
-                    divRow = document.createElement("div");
+
+                    let divRow = document.createElement("div");
                     divRow.classList.add('placeRow');
                     divRow.classList.add(`placeRow${key}`);
                     divRow.id=`placeRow${key}`;
-                    temp = rowsMap.get(key);
-                    for (let i = 0; i < temp.length; i++) {
-                        placeHTML = `${temp[i].number}`;
-                        divPlace = document.createElement("div");
+                    tempRow = rowsMap.get(key);//tempRow - элемент rowsMap, соответствующий одному ряду
+                    for (let i = 0; i < tempRow.length; i++) {
+                        placeHTML = `${tempRow[i].number}`;
+                        let divPlace = document.createElement("div");
                         divPlace.classList.add(`place`);
-                        if(temp[i].booking){
+                        if(tempRow[i].booking){
                             divPlace.classList.add(`place_taken`);
                         } else {
                             divPlace.classList.add(`place_free`);
                         };
 
                         divPlace.addEventListener('click', ()=>{
-                            order.bind(film)(temp, event);
+                            that.order(tempRow, event);
                         });
 
-                        divPlace.addEventListener('click', placeToggle.bind(film));
-
-                        $(divPlace).on('after_order', placeToggle.bind(film));
+                        $(divPlace).on('after_order', that.placeToggle);
 
                         divPlace.addEventListener('mouseover', placeHover);
-
-                        
-                        // $(divPlace).on('after_toggle', placeHoverOut);
 
                         divPlace.addEventListener('mouseout', placeHoverOut);
 
                         
                         divPlace.addEventListener('contextmenu', ()=>{
-                            placeContext.bind(film)(temp, event);
+                            that.placeContext(tempRow, event);
                         });
-
                         divPlace.innerHTML = placeHTML;
                         divRow.appendChild(divPlace);
                     };
                     placesContainer.appendChild(divRow);
                 };
-                // container.addEventListener('click', ()=>{
-                //     orderBubble.bind(film)(temp, event);
-                // });
             };
             closeFilmForm.onclick = function(){
                 chooseFilmForm.removeChild(chooseFilmForm.lastChild);
                 container.style.display = 'none';
+                // document.body.style.overflow = '';
             };
             k += 1;
         };
-    },
+    }
 
-    renderNewFilms: function () {
-        let movieGrid = document.getElementById('movie-grid'),
-            sortedFilms = this.sortFilms();
+    renderNewFilms(idWhereToInsert){
+        let movieGrid = document.getElementById(idWhereToInsert),
+            sortedFilms = this.sortedFilms;
         
         for (let i = 0; i < sortedFilms['newFilms'].length; i++) {
 
@@ -441,90 +395,144 @@ const film = {
             let clone = document.importNode(tmpl.content, true);
             movieGrid.appendChild(clone);
         };
-    },
-};
 
-
-// film.getName.bind(film)("new");
-// film.getStart.bind(film)("new");
-film.renderFilmsInHire.bind(film)();
-film.renderNewFilms.bind(film)();
-// film.getRows.bind(film)();
+    }
 
 // обработка клика на квадрате с местом, заполнение элементов input формы
-let order = function(temp, event) {
-    let chooseFilmForm__place = document.getElementById("chooseFilmForm__place");
-    let chooseFilmForm__price = document.getElementById("chooseFilmForm__price");
-    let el = event.target;
+    order (tempRow, event) {
+        let chooseFilmForm__place = document.getElementById("chooseFilmForm__place");
+        let chooseFilmForm__price = document.getElementById("chooseFilmForm__price");
+        let el = event.target;
+        if (el.classList.contains('place_free')) {
+            let filmname = document.getElementById("filmname").innerHTML;
+            let placeNum = el.innerHTML;
+            chooseFilmForm__place.value = placeNum;
+            chooseFilmForm__price.value = this.getPrice(filmname, placeNum, tempRow)['priceFilm'] * this.getPrice(filmname, placeNum, tempRow)['pricePlace'];
+        } else if (el.classList.contains('place_chosen')) {
+            chooseFilmForm__place.value = '';
+            chooseFilmForm__price.value = '';
+        } else {
+            chooseFilmForm__place.value = '';
+            chooseFilmForm__price.value = '';
+        };
+        $(el).trigger('after_order');
+    }
 
-    if (el.classList.contains('place_free')) {
-        let filmname = document.getElementById("filmname").innerHTML;
-        let placeNum = el.innerHTML;
-        chooseFilmForm__place.value = placeNum;
-        chooseFilmForm__price.value = this.getPrice(filmname, placeNum, temp)['priceFilm'] * this.getPrice(filmname, placeNum, temp)['pricePlace'];
-    } else if (el.classList.contains('place_chosen')) {
-        chooseFilmForm__place.value = '';
-        chooseFilmForm__price.value = '';
-    } else {
-        chooseFilmForm__place.value = '';
-        chooseFilmForm__price.value = '';
-    };
-    $(el).trigger('after_order');
-};
-
-//обработчик на всплывающие события
-// let orderBubble = function(temp, event) {
-
-//     let el = event.target;
-//     if (el.classList.contains('place')){
-//         let chooseFilmForm__place = document.getElementById("chooseFilmForm__place");
-//         let chooseFilmForm__price = document.getElementById("chooseFilmForm__price");
-//         if (el.classList.contains('place_free')) {
-//             let filmname = document.getElementById("filmname").innerHTML;
-//             let placeNum = el.innerHTML;
-//             chooseFilmForm__place.value = placeNum;
-//             chooseFilmForm__price.value = this.getPrice(filmname, placeNum, temp)['priceFilm'] * this.getPrice(filmname, placeNum, temp)['pricePlace'];
-//         } else if (el.classList.contains('place_chosen')) {
-//             chooseFilmForm__place.value = '';
-//             chooseFilmForm__price.value = '';
-//         } else {
-//             chooseFilmForm__place.value = '';
-//             chooseFilmForm__price.value = '';
-//         };
-//     };
-//     $(el).trigger('after_orderBubble');
-//     // event.stopPropagation();
-// };
-
-
-// обработка клика на квадрате с местом, смена цвета
-let placeToggle = function(e) {
-    let el = e.target;
-    // el.classList.toggle('place_chosen');
-    if (el.classList.contains('place_free')) {
-        el.classList.remove('place_free');
-        el.classList.add('place_chosen');
-    } else if (el.classList.contains('place_chosen')) {
-        el.classList.remove('place_chosen');
-        el.classList.add('place_free');
-    };
-    $(el).trigger('after_toggle');
-};
+// обработка клика на квадрате с местом, изменение класса для изменения цвета
+    placeToggle (e) {
+        let el = e.target;
+        // el.classList.toggle('place_chosen');
+        if (el.classList.contains('place_free')) {
+            el.classList.remove('place_free');
+            el.classList.add('place_chosen');
+        } else if (el.classList.contains('place_chosen')) {
+            el.classList.remove('place_chosen');
+            el.classList.add('place_free');
+        };
+        $(el).trigger('after_toggle');
+    }
 
 // обрабтка правого клика на квадате с местом
-let placeContext = function(temp, event){
-    let el = event.target;
-    let filmname = document.getElementById("filmname").innerHTML;
-    let placeNum = el.innerHTML;
-    let priceFilm = 0;
-    let pricePlace = 0;
-    let price = 0;
-    priceFilm = this.getPrice(filmname, placeNum, temp)['priceFilm'];
-    pricePlace = this.getPrice(filmname, placeNum, temp)['pricePlace'];
-    price = priceFilm * pricePlace;
-    alert(price);
-    event.preventDefault();
+    placeContext (tempRow, event){
+        let el = event.target;
+        let filmname = document.getElementById("filmname").innerHTML;
+        let placeNum = el.innerHTML;
+        let priceFilm = 0;
+        let pricePlace = 0;
+        let price = 0;
+        priceFilm = this.getPrice(filmname, placeNum, tempRow)['priceFilm'];
+        pricePlace = this.getPrice(filmname, placeNum, tempRow)['pricePlace'];
+        price = priceFilm * pricePlace;
+        alert(price);
+        event.preventDefault();
+    }
+
+}
+
+
+
+class Places {
+    places
+    placesMap
+    constructor(numOfPlaces){
+        this.setPlaces(numOfPlaces);
+        this.setPlacesMap();
+    }
+
+    setPlaces (numOfPlaces) {
+        let plcs = [];
+        for (let i = 0; i <= numOfPlaces-1; i++) {
+            let number = i+1;
+            let price = 0;
+            let booking = true;
+            let row = 1; //ряд всегда 1
+
+//определение брони места
+            if (Math.random() > 0.5) {
+                booking = true;
+            } else {
+                booking = false;
+            };
+
+//определение цены
+            if (i <= 2 || i > (numOfPlaces - 4)) {
+                price = 1;
+            } else {
+                price = 1.5;
+            };
+
+            let place = {
+                number,
+                price,
+                booking,
+                row,
+            };
+            plcs.push(place);
+        };
+        this.places = plcs;
+    }
+
+//предполагал сделать с несколькими рядами, пока используется только один ряд
+    setPlacesMap () {
+        let rowsAndPlaces = [],
+            map = new Map();
+
+        if (this.places.length == 0) {
+            return false;
+        };
+
+        //узнаем уникальные ряды
+        this.places.forEach(place => {
+            map.set(place.row, []);
+        });
+
+        //создаем map
+        for(let key of map.keys()) {
+            this.places.forEach(place => {
+                if (place.row == key){
+                    rowsAndPlaces.push(place); 
+                };
+            });
+            map.set(key, rowsAndPlaces);
+            rowsAndPlaces=[];
+        };
+        let sortedMap = new Map([...map.entries()].sort()); // http://qaru.site/questions/188901/is-it-possible-to-sort-a-es6-map-object
+        this.placesMap = sortedMap;
+    }
+
+    getPlaces (){
+        return this.placesMap;
+    }
 };
+
+
+let filmsObject = new Film();
+let placesObject = new Places(10);
+
+
+filmsObject.renderFilmsInHire('movie-list__body', placesObject.getPlaces());
+filmsObject.renderNewFilms('movie-grid');
+
 
 // обработка события перемещения курсора мыши над элементом
 let placeHover = function(){
@@ -539,108 +547,3 @@ let placeHoverOut = function(){
         this.style.background = '#ffa500';
     }
 };
-
-};
-
-
-$(document).ready(globalFunction);
-
-   //массив мест
-    // const places = [
-    //     {
-    //         number: '1',
-    //         price: '1',
-    //         booking: false,
-    //         row: 1
-    //     },
-    //     {
-    //         number: '2',
-    //         price: '1',
-    //         booking: false,
-    //         row: 1
-    //     },
-    //     {
-    //         number: '3',
-    //         price: '1.2',
-    //         booking: true,
-    //         row: 1
-    //     },
-    //     {
-    //         number: '4',
-    //         price: '1.2',
-    //         booking: false,
-    //         row: 1
-    //     },
-    //     {
-    //         number: '5',
-    //         price: '1.2',
-    //         booking: false,
-    //         row: 1
-    //     },
-    //     {
-    //         number: '6',
-    //         price: '1.2',
-    //         booking: false,
-    //         row: 1
-    //     },
-    //     {
-    //         number: '7',
-    //         price: '1',
-    //         booking: false,
-    //         row: 1
-    //     },
-    //     {
-    //         number: '8',
-    //         price: '1',
-    //         booking: false,
-    //         row: 1
-    //     },
-    //     {
-    //         number: '9',
-    //         price: '1',
-    //         booking: false,
-    //         row: 2
-    //     },
-    //     {
-    //         number: '10',
-    //         price: '1',
-    //         booking: false,
-    //         row: 2
-    //     },
-    //     {
-    //         number: '11',
-    //         price: '1',
-    //         booking: false,
-    //         row: 2
-    //     },
-    //     {
-    //         number: '12',
-    //         price: '1.2',
-    //         booking: false,
-    //         row: 2
-    //     },
-    //     {
-    //         number: '13',
-    //         price: '1.2',
-    //         booking: false,
-    //         row: 2
-    //     },
-    //     {
-    //         number: '14',
-    //         price: '1',
-    //         booking: false,
-    //         row: 2
-    //     },
-    //     {
-    //         number: '15',
-    //         price: '1',
-    //         booking: true,
-    //         row: 2
-    //     },
-    //     {
-    //         number: '16',
-    //         price: '1',
-    //         booking: false,
-    //         row: 2
-    //     },
-    // ];
