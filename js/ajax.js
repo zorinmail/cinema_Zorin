@@ -23,34 +23,6 @@ jQuery(document).ready(($) => {
 });
 
 
-// function getRequest(api_url, callback) {
-//     let xhr = new XMLHttpRequest();
-//     async = true;
-//     xhr.onreadystatechange = function(){
-//         if (xhr.readyState == 4 && xhr.status == 200){
-//             callback.call(xhr.responseText);
-//         }
-//     }
-//     xhr.open('GET', api_url, async);
-//     xhr.send();
-//     if (xhr.status != 200){
-//         return(xhr.status + ': '+ xhr.statusText)
-//     }
-// }
-
-//при загрузке страницы обновляем город в шапке сайта. Как на лекции
-// jQuery(document).ready(($) => {
-//     console.log('start request');
-//     getRequest(SYPEX_URL, function(){
-//         let answer = $.parseJSON(this);
-//         let city = answer['city']['name_ru'];
-//         // console.log(city);
-//         $('#city_name').html(city);
-//     });       
-// });
-
-
-
 //логика для модального окна выбора города
 jQuery(($)=>{ //? для чего оборачиваем в это?
     $('#city_name').on('click', function(e){

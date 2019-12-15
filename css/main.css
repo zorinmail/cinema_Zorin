@@ -137,22 +137,20 @@ html {
 }
 
 .block-top {
-    /*width: 51.5rem;*/
+    width: 51.5rem;
     margin: auto;
 }
 
-.nav {
+.navigation {
     margin: 0 0 8.25rem 0;
     display: flex;
     align-items: center;
-    flex-grow: 1;
+    /* flex-grow: 1; */
 }
 .nav__logo{
-    /*display: inline-block;*/
 }
 .nav__menu {
-    /*display: inline-block;*/
-    margin-left: 12rem;
+    margin-left: 7rem;
 }
 .nav__link {
     color: white;
@@ -170,17 +168,21 @@ html {
 }
 .menu{
     list-style: none;
+    display: flex;
+
 }
 .menu__city{
-    display: inline-block;
-    margin: 0 0 0 1.905rem;
+    margin: 0 0 0 1rem;
+    text-align: right;
+}
+.menu__city-p{
     color: white;
     font-size: 0.75rem;
 }
 .menu__item {
-    display: inline-block;
-    margin: 0 0 0 1.905rem;
-    
+    /* display: inline-block; */
+    margin: 0 0 0 0.905rem;
+    min-height: fit-content;
 }
 /* .menu__item:hover {  
     padding-top: 1px;
@@ -244,12 +246,12 @@ html {
     /*background: #6c6c6c;*/
 }
 .welcome {
-   width: 20.05rem;
+   width: 25.85rem;
    background: #ffffff;
    padding: 1.7rem 4.25rem 2.2rem 1.6rem;
    box-shadow: 0rem 0.05rem 0.1rem 0rem rgba(35, 31, 32, 0.65);
    position: absolute;
-   top: -6.25rem;
+   top: -10.55rem;
    right: 0rem;
    z-index: 1;
 }
@@ -274,7 +276,7 @@ html {
 }
 
 .why-we {
-    /*width: 51.5rem;*/
+    width: 51.5rem;
     position: relative;
     margin: auto;
 }
@@ -284,6 +286,12 @@ html {
     margin-bottom: 6.2rem;
     text-align: left;
 }
+.why-we__main-part{
+    display: grid;
+    grid-template-rows: 1fr 1fr ;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2vw;
+}
 .why-we__main-part .why-we__row:last-child {
     margin-bottom: 0;
 }
@@ -291,11 +299,12 @@ html {
 
 .why-we__row {
     margin-bottom: 2rem;
+    /* display: flex; */
 }
 
 .why-we__col {
-    float: left;
-    width: 33.33%;
+    /* float: left; */
+    /* width: 33.33%; */
     text-align: center;
     /*margin-bottom: 2rem;*/
 }
@@ -363,7 +372,7 @@ html {
     margin-bottom: 7.5rem;
 }
 .movie-list {
-    /*width: 51.5rem;*/
+    width: 51.5rem;
     margin: auto;
 }
 .movie-list__header { /*"выберите фильм"*/
@@ -395,7 +404,7 @@ html {
 /* столбец начало сеанса */
 .movie-list__table-time-h {
     text-align: center;
-    width: 11.5rem; /*в макете 230px, но там время шире. Предлагаю сократить, 200px - норм*/
+    width: 8.5rem; /*в макете 230px, но там время шире. Предлагаю сократить, 200px - норм*/
     vertical-align: middle;
 }
 .movie-list__table-time-b {
@@ -553,7 +562,7 @@ a div {
     overflow: hidden;
 }
 .gift__container {
-    /*width: 51.5rem;*/
+    width: 51.5rem;
     position: relative;
     margin: auto;
     text-align: right;
@@ -706,12 +715,12 @@ a div {
 /*\карта*/
 .container-map {
     margin-bottom: 5rem;
+    /* width: 51.5rem; */
 }
-.map {
-    padding: 11.35rem 0;
-    background: url(/images/map.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
+.viewDiv_map {
+    height: 50vh;
+    min-height: 200px;
+    background-color: gray;
 }
 /*\карта*/
 
@@ -757,10 +766,11 @@ a div {
 
 /*\форма*/
 .container-forms {
+    margin-bottom: 5rem;
 
 }
 .form {
-    /*width: 51.5rem;*/
+    width: 51.5rem;
     margin: auto;
 }
 
@@ -934,7 +944,6 @@ a div {
     padding-top: 100%;
     float: left; 
 }
-
 
 
 .place:hover{

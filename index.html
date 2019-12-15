@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="css/main.css"/>
     <link rel="stylesheet" href="css/media.css"/>
 
+
+
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/owl.carousel.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -34,22 +36,15 @@
 
 <body>
 
-
-
-    <!-- Button trigger modal
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-        Launch demo modal
-    </button> -->
-      
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <!-- модальное окно для выбора города -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
+            <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Выберите свой город</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <h5 class="modal-title" id="exampleModalLongTitle">Выберите свой город</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
-              </button>
+                </button>
             </div>
             <div class="modal-body">
                 <div class="form-group">
@@ -61,19 +56,18 @@
                 </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-              <button id="city_save" type="button" class="btn btn-success" data-dismiss="modal">Сохранить</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                <button id="city_save" type="button" class="btn btn-success" data-dismiss="modal">Сохранить</button>
             </div>
-          </div>
+            </div>
         </div>
-      </div>
+    </div>
 
 
-
-
+    <!-- первый экран -->
     <div class="container-top">
         <header class="block-top">
-            <nav class="nav">
+            <nav class="navigation">
                 <div class="nav__logo">
                     <a href="http://university.innopolis.ru" target="_blank"><img title="Университет Иннополис" alt="Лого Иннополиса" src="images/logo.png" /></a>
                 </div>
@@ -94,8 +88,8 @@
                         <li class="menu__item">
                             <a class="nav__link" title="Контакты" href="#">Contact</a>
                         </li>
-                        <li class="menu__item">
-                            <p class="menu__city">Ваш город:</p>
+                        <li class="menu__city">
+                            <p class="menu__city-p">Ваш город:</p>
                             <a class="nav__link" title="выбрать город" href="#" id="city_name" data-toggle="modal" data-target="#exampleModalCenter">Не определено</a>
                         </li>
                     </ul>
@@ -113,12 +107,7 @@
             </div>
         </header>
     </div>
-<!--
-                <li class="menu_nav_li_city">
-                    <span style="color: white">ВАШ ГОРОД:</span>
-                    <a title="Выбор города" href="#" style="color: white">Москва</a>
-                </li>
-            -->
+
 
 <!-- добро пожаловать -->
     <!-- <div class="some-relative-block1">
@@ -141,8 +130,7 @@
 
             <h2 class="why-we__title">Почему мы?</h2>
             <div class="why-we__main-part">
-
-                <div class="why-we__row">
+                <!-- <div class="why-we__row"> -->
                     <div class="why-we__col">
                         <div class="why-we__image-container why-we__image-container1">
                             <img class="why-we__image why-we__image1" 
@@ -183,10 +171,10 @@
                                 learn how they we able to tackle their problems and become successful.</p>
                         </div>
                     </div>
-                    <div style="clear: both"></div>
-                </div>
+                    <!-- <div style="clear: both"></div> -->
+                <!-- </div> -->
 
-                <div class="why-we__row">
+                <!-- <div class="why-we__row"> -->
                     <div class="why-we__col why-we__col-bottom">
                         <div class="why-we__image-container why-we__image-container1">
                             <img class="why-we__image why-we__image1" 
@@ -228,13 +216,15 @@
                         </div>
                     </div>
                     <div style="clear: both"></div>
-                </div>
+                <!-- </div> -->
 
             </div>
         </section>
         <div style="clear: both"></div>
     </div>
 
+
+    
 <!-- Таблица Выберите фильм. Релиз 2.4 -->
     <div class="container-movie-list">
         <section class="movie-list">
@@ -341,9 +331,7 @@
 
 <!-- Контакты, схема проезда -->
     <section class="container-map">
-        <div class="map">
-
-        </div>
+        <div class="viewDiv_map" id="viewDiv_map"></div>
         <footer class="contacts">
             <div class="contacts__links">
                 <a class="social-network" href="http://twitter.com" title="fb" target="_blank">
@@ -514,7 +502,7 @@
 
             <div>
                 <label for="select-place">Выберите место:</label>
-                <select aria-required="true" name="firstname" id="firstname" required>
+                <select aria-required="true" name="select-place" id="select-place" required>
                     <option selected disabled value="">Выберите</option>
                     <option value="1">Место 1</option>
                     <option value="2">Место 2</option>
@@ -533,12 +521,6 @@
                 <textarea class="text-area" placeholder="Ваш комментарий" id="comment"></textarea>
             </div>
 
-            <!--<div>
-                <input type="radio" name="some" value="1" id="1"/><label for="1">первое</label><br/>
-                <input type="radio" name="some" value="2" id="2"/><label for="2">второе</label><br/>
-                <input type="radio" name="some" value="13" id="3"/><label for="3">одно из трёх</label>
-            </div>-->
-
             <div>
                 <input type="checkbox" name="agree" id="agree" required/>
                 <label class="form__agree-label" for="agree">Я даю согласие на обработку персональных данных</label>
@@ -553,12 +535,6 @@
                 <button class="form__btn" type="submit" id="send_gift">Заказать</button>
             </div>
 
-            <!--input внутри формы-->
-        <!--
-            <div>
-                <input type="submit" value="Заказать" />
-            </div>
-        -->
         </form>
 
             <!--button вне формы-->
@@ -567,25 +543,19 @@
                 <button type="submit" form="form">Заказать</button>
             </div>
         -->
-            <!--input вне формы-->
-        <!--
-            <div>
-                <input type="submit" form="form" value="Заказать" />
-            </div>
-        -->
     </section>
 
     <div id="modalPresent">
             <div class="form2" method="POST" action="order.php" name="form" id="form" enctype="multipart/form-data">
                 <button id="closeModal">X</button>
                 <div>
-                    <label for="firstname">Ваше имя:</label>
-                    <input type="text" value="" placeholder="Апполинария" name="firstname" id="firstname2" required>
+                    <label for="firstname2">Ваше имя:</label>
+                    <input type="text" value="" placeholder="Апполинария" name="firstname2" id="firstname2" required>
                 </div>
     
                 <div>
-                    <label for="e-mail">Электронная почта</label>
-                    <input type="email" value="" placeholder="koto@mail.com" name="e-mail" id="e-mail2" required>
+                    <label for="e-mail2">Электронная почта</label>
+                    <input type="email" value="" placeholder="koto@mail.com" name="e-mail2" id="e-mail2" required>
                 </div>
     
                 <div>
@@ -617,13 +587,13 @@
         <div class="form2" method="POST" action="order.php" name="form" enctype="multipart/form-data">
             <button id="closeOrderForm">X</button>
             <div>
-                <label for="firstname">Ваше имя:</label>
-                <input type="text" value="" placeholder="Апполинария" name="firstname" id="firstname2" required>
+                <label for="firstname3">Ваше имя:</label>
+                <input type="text" value="" placeholder="Апполинария" name="firstname3" id="firstname3" required>
             </div>
 
             <div>
-                <label for="e-mail">Электронная почта</label>
-                <input type="email" value="" placeholder="koto@mail.com" name="e-mail" id="e-mail2" required>
+                <label for="e-mail3">Электронная почта</label>
+                <input type="email" value="" placeholder="koto@mail.com" name="e-mail3" id="e-mail3" required>
             </div>
 
             <div>
@@ -641,8 +611,6 @@
             </div>
         </div>
     </div>
-
-
 
     <div id="chooseFilmForm_container">
         <div class="form3" id="chooseFilmForm" method="POST" action="order.php" name="form" enctype="multipart/form-data">
@@ -811,13 +779,16 @@
     <!-- <script type="text/javascript" src="js/films.js"></script> -->
 
     <script type="text/javascript" src="js/films.js"></script>
-    <!-- <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/owl.theme.default.css"> -->
-    <!-- <script src="js/films_4.8.js"></script> -->
     <!-- <script src="js/test.js"></script> -->
     <script src="js/ajax.js"></script>
     <script src="js/get_gift.js"></script>
-    <!-- <script src="js/films_4.4.js"></script> -->
+
+
+    <!-- карта -->
+    <!-- подгружается в конце из-за jQuery -->
+    <link rel="stylesheet" href="https://js.arcgis.com/4.13/esri/themes/light/main.css">
+    <script src="https://js.arcgis.com/4.13/"></script>
+    <script src="js/map.js"></script>
 </body>
 
 </html>
