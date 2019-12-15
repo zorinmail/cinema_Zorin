@@ -118,6 +118,7 @@ a {
 }
 html {
     /*font-size: 1.042vw;*/
+    /* font-size: 20px; */
     font-size: 1.297vw;
 }
 /*\общие стили*/
@@ -146,11 +147,16 @@ html {
     display: flex;
     align-items: center;
     /* flex-grow: 1; */
+    justify-content: space-between;
 }
 .nav__logo{
+    border: 1px solid white;
+    
 }
 .nav__menu {
-    margin-left: 7rem;
+    margin-left: 4rem;
+    border: 1px solid white;
+
 }
 .nav__link {
     color: white;
@@ -171,11 +177,15 @@ html {
     display: flex;
 
 }
-.menu__city{
+.nav__city{
     margin: 0 0 0 1rem;
     text-align: right;
+    border: 1px solid white;
+    min-width: 11.6rem;
+    max-width: 11.6rem;
+
 }
-.menu__city-p{
+.nav__city-p{
     color: white;
     font-size: 0.75rem;
 }
@@ -963,3 +973,13 @@ a div {
 /* tr:hover td {
     color: green;
 } */
+.arrowTop{
+    display: inline-block;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1000;
+}
+.arrowTop:hover{
+    cursor: pointer;
+}
