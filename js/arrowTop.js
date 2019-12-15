@@ -6,5 +6,5 @@ $('#arrowTop').click(function() {
 })
 
 $(window).scroll(function() {
-    arrowTop.hidden = (pageYOffset < (document.documentElement.clientHeight*.75));
+    arrowTop.hidden = (pageYOffset < (document.documentElement.clientHeight));
 })

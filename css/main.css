@@ -135,6 +135,7 @@ html {
     position: relative;
     overflow: hidden;
     margin-bottom: 4.1rem;
+    height: 120vh;
 }
 
 .block-top {
@@ -175,7 +176,7 @@ html {
 .menu{
     list-style: none;
     display: flex;
-
+    text-align: center;
 }
 .nav__city{
     margin: 0 0 0 1rem;
